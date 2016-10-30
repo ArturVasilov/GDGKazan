@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Митап 1",
+    "description": "Здесть должно быть описание мероприятия",
+    "date_start": "1.12.2016",
+    "date_finish": "1.12.2016",
+    "status": "ACTIVE",
+    "preview_img": "",
+    "header_img": "",
+    "photos": [],
+    "links": []
+  },
+  {
+    "id": 2,
+    "name": "Митап 2",
+    "description": "Здесть должно быть описание мероприятия",
+    "date_start": "1.12.2016",
+    "date_finish": "1.12.2016",
+    "status": "PLANNED",
+    "preview_img": "",
+    "header_img": "",
+    "photos": [],
+    "links": []
+  },
+  {
+    "id": 3,
+    "name": "Митап 3",
+    "description": "Здесть должно быть описание мероприятия",
+    "date_start": "1.12.2016",
+    "date_finish": "1.12.2016",
+    "status": "PASSED",
+    "preview_img": "",
+    "header_img": "",
+    "photos": [],
+    "links": []
+  }
+]
