@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import ru.arturvasilov.rxloader.RxUtils;
@@ -21,6 +22,7 @@ import ru.gdg.kazan.gdgkazan.models.GsonHolder;
 import ru.gdg.kazan.gdgkazan.models.database.ConfigTable;
 import ru.gdg.kazan.gdgkazan.models.database.EventsTable;
 import rx.Observable;
+import rx.functions.Func1;
 
 /**
  * @author Artur Vasilov
@@ -56,6 +58,10 @@ public class EventsRepository {
                     SQLite.get().insert(EventsTable.TABLE, events);
                 })
                 .onErrorResumeNext(throwable -> RxSQLite.get().query(EventsTable.TABLE))
+                .map(events -> {
+                    Collections.sort(events);
+                    return events;
+                })
                 .compose(RxUtils.async());
     }
 }

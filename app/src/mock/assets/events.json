@@ -2,8 +2,8 @@
   {
     "id": 1,
     "name": "Study Jams",
-    "preview_description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
+    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "description": "GDG Kazan вместе с другими городами мира проводит бесплатные курсы Android StudyJams для всех желающих познакомиться с разработкой под Android.",
     "date_start": "02.03.2016",
     "date_finish": "19.04.2016",
     "status": "FINISHED",
@@ -20,8 +20,20 @@
     ],
     "links": [
       {
-        "title": "",
-        "url": ""
+        "title": "Официальный сайт курсов Study Jams",
+        "url": "http://developerstudyjams.com/"
+      },
+      {
+        "title": "Информация о курсах на Habrahabr",
+        "url": "https://habrahabr.ru/company/google/blog/277771/"
+      },
+      {
+        "title": "Фотоотчет со Study Jams Kazan 2016",
+        "url": "https://vk.com/album-119719934_230943855"
+      },
+      {
+        "title": "Курс на Udacity для начинающих Android-разработчиков",
+        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
       }
     ]
   },
@@ -106,8 +118,8 @@
   {
     "id": 5,
     "name": "Study Jams",
-    "preview_description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
+    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
     "date_start": "02.03.2016",
     "date_finish": "19.04.2016",
     "status": "FINISHED",
@@ -124,8 +136,20 @@
     ],
     "links": [
       {
-        "title": "",
-        "url": ""
+        "title": "Официальный сайт курсов Study Jams",
+        "url": "http://developerstudyjams.com/"
+      },
+      {
+        "title": "Информация о курсах на Habrahabr",
+        "url": "https://habrahabr.ru/company/google/blog/277771/"
+      },
+      {
+        "title": "Фотоотчет со Study Jams",
+        "url": "https://vk.com/album-119719934_230943855"
+      },
+      {
+        "title": "Курс на Udacity для начинающих Android-разработчиков",
+        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
       }
     ]
   }

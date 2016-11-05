@@ -14,7 +14,7 @@ public class Link implements Serializable {
     @SerializedName("title")
     private String mTitle;
 
-    @SerializedName("mUrl")
+    @SerializedName("url")
     private String mUrl;
 
     @NonNull

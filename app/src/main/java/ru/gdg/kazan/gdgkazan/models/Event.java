@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author Artur Vasilov
  */
-public class Event implements Serializable {
+public class Event implements Serializable, Comparable<Event> {
 
     @SerializedName("id")
     private int mId;
@@ -146,5 +146,10 @@ public class Event implements Serializable {
 
     public void setSubscribed(boolean subscribed) {
         mIsSubscribed = subscribed;
+    }
+
+    @Override
+    public int compareTo(@NonNull Event event) {
+        return event.getId() - getId();
     }
 }
