@@ -43,8 +43,14 @@ public class Event implements Serializable {
     @SerializedName("links")
     private List<Link> mLinks;
 
+    private boolean mIsSubscribed;
+
     public int getId() {
         return mId;
+    }
+
+    public void setId(int id) {
+        mId = id;
     }
 
     @NonNull
@@ -52,9 +58,17 @@ public class Event implements Serializable {
         return mName;
     }
 
+    public void setName(@NonNull String name) {
+        mName = name;
+    }
+
     @NonNull
     public String getPreviewDescription() {
         return mPreviewDescription;
+    }
+
+    public void setPreviewDescription(@NonNull String previewDescription) {
+        mPreviewDescription = previewDescription;
     }
 
     @NonNull
@@ -62,9 +76,17 @@ public class Event implements Serializable {
         return mDescription;
     }
 
+    public void setDescription(@NonNull String description) {
+        mDescription = description;
+    }
+
     @NonNull
     public String getDateStart() {
         return mDateStart;
+    }
+
+    public void setDateStart(@NonNull String dateStart) {
+        mDateStart = dateStart;
     }
 
     @NonNull
@@ -72,14 +94,26 @@ public class Event implements Serializable {
         return mDateFinish;
     }
 
+    public void setDateFinish(@NonNull String dateFinish) {
+        mDateFinish = dateFinish;
+    }
+
     @NonNull
     public EventStatus getStatus() {
         return mStatus;
     }
 
+    public void setStatus(@NonNull EventStatus status) {
+        mStatus = status;
+    }
+
     @NonNull
     public String getPreviewImage() {
         return mPreviewImage;
+    }
+
+    public void setPreviewImage(@NonNull String previewImage) {
+        mPreviewImage = previewImage;
     }
 
     @NonNull
@@ -90,11 +124,27 @@ public class Event implements Serializable {
         return mPhotos;
     }
 
+    public void setPhotos(@NonNull List<Photo> photos) {
+        mPhotos = photos;
+    }
+
     @NonNull
     public List<Link> getLinks() {
         if (mLinks == null) {
             return Collections.emptyList();
         }
         return mLinks;
+    }
+
+    public void setLinks(@NonNull List<Link> links) {
+        mLinks = links;
+    }
+
+    public boolean isSubscribed() {
+        return mIsSubscribed;
+    }
+
+    public void setSubscribed(boolean subscribed) {
+        mIsSubscribed = subscribed;
     }
 }

@@ -24,6 +24,11 @@
         <activity
             android:name=".screens.event.EventActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <provider
+            android:name=".models.database.SQLiteProvider"
+            android:authorities="ru.gdg.kazan.gdgkazan"
+            android:exported="false"/>
     </application>
 
 </manifest>
