@@ -24,7 +24,9 @@
             android:id="@+id/eventPreviewImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/events.image_description.event_image"/>
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/events.image_description.event_image"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/eventNameText"

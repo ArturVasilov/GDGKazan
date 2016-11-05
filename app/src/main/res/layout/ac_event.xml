@@ -35,13 +35,13 @@
             android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical"
             android:paddingBottom="@dimen/padding_small"
-            android:paddingLeft="@dimen/padding_medium"
-            android:paddingRight="@dimen/padding_medium"
             android:paddingTop="@dimen/padding_small">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
                 android:fontFamily="sans-serif"
                 android:text="@string/event.description.title"
                 android:textColor="@color/primary_text"
@@ -51,6 +51,8 @@
                 android:id="@+id/eventDescriptionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_small"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/secondary_text"
@@ -60,6 +62,8 @@
                 android:id="@+id/linksTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:fontFamily="sans-serif"
                 android:text="@string/event.links.title"
@@ -70,17 +74,27 @@
                 android:id="@+id/linksRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_small"/>
 
             <TextView
                 android:id="@+id/photosTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:fontFamily="sans-serif"
                 android:text="@string/event.photos.title"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/text.22"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/photosRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"/>
 
         </LinearLayout>
 

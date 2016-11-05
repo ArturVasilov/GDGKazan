@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,9 +33,6 @@ public class EventActivity extends AppCompatActivity implements EventView {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
-    @BindView(R.id.scrollView)
-    NestedScrollView mScrollView;
-
     @BindView(R.id.eventDescriptionText)
     TextView mDescriptionText;
 
@@ -48,6 +44,9 @@ public class EventActivity extends AppCompatActivity implements EventView {
 
     @BindView(R.id.photosTitle)
     TextView mPhotosTitle;
+
+    @BindView(R.id.photosRecyclerView)
+    RecyclerView mPhotosRecyclerView;
 
     public static void start(@NonNull Activity activity, @NonNull Event event) {
         Intent intent = new Intent(activity, EventActivity.class);
@@ -64,8 +63,8 @@ public class EventActivity extends AppCompatActivity implements EventView {
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_back_white);
 
-        mScrollView.setNestedScrollingEnabled(false);
         mLinksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mPhotosRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         Event event = (Event) getIntent().getSerializableExtra(EVENT_KEY);
         EventPresenter presenter = new EventPresenter(this);
@@ -107,11 +106,13 @@ public class EventActivity extends AppCompatActivity implements EventView {
 
     @Override
     public void showPhotos(@NonNull List<Photo> photos) {
-
+        PhotosAdapter adapter = new PhotosAdapter(photos);
+        mPhotosRecyclerView.setAdapter(adapter);
     }
 
     @Override
     public void hidePhotos() {
         mPhotosTitle.setVisibility(View.GONE);
+        mPhotosRecyclerView.setVisibility(View.GONE);
     }
 }

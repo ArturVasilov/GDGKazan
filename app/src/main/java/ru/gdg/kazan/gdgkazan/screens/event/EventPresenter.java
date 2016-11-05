@@ -18,7 +18,17 @@ public class EventPresenter {
     public void init(@NonNull Event event) {
         mView.showTitle(event.getName());
         mView.showDescription(event.getDescription());
-        mView.showLinks(event.getLinks());
-        mView.showPhotos(event.getPhotos());
+
+        if (event.getLinks().isEmpty()) {
+            mView.hideLinks();
+        } else {
+            mView.showLinks(event.getLinks());
+        }
+
+        if (event.getPhotos().isEmpty()) {
+            mView.hidePhotos();
+        } else {
+            mView.showPhotos(event.getPhotos());
+        }
     }
 }
