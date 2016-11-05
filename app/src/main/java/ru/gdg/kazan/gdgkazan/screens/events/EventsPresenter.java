@@ -25,7 +25,6 @@ public class EventsPresenter {
                 .doOnSubscribe(mView::showLoading)
                 .doOnTerminate(mView::hideLoading)
                 .compose(mLifecycleHandler.load(R.id.events_request))
-                .subscribe(mView::showEvents, throwable -> {
-                });
+                .subscribe(mView::showEvents, throwable -> {});
     }
 }

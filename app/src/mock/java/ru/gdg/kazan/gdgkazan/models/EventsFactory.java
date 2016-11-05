@@ -9,7 +9,6 @@ import java.io.InputStream;
 
 import okhttp3.Request;
 import okhttp3.Response;
-import ru.gdg.kazan.gdgkazan.repository.OkHttpResponse;
 import rx.functions.Func2;
 
 /**
