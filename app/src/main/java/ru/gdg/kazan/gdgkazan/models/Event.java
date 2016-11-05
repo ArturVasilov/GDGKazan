@@ -18,6 +18,9 @@ public class Event {
     @SerializedName("name")
     private String mName;
 
+    @SerializedName("preview_description")
+    private String mPreviewDescription;
+
     @SerializedName("description")
     private String mDescription;
 
@@ -46,6 +49,11 @@ public class Event {
     @NonNull
     public String getName() {
         return mName;
+    }
+
+    @NonNull
+    public String getPreviewDescription() {
+        return mPreviewDescription;
     }
 
     @NonNull

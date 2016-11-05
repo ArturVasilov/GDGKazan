@@ -11,5 +11,7 @@
 
 
     <!-- EVENTS -->
-    <string name="events.image_description.event_image">Event image</string>
+    <string name="events.image_description.event_image">Логотип мероприятия</string>
+    <string name="events.image_description.favourite_image">Добавить в избранное</string>
+    <string name="events.more_button">ПОДРОБНЕЕ</string>
 </resources>

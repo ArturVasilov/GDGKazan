@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "ru.gdg.kazan.gdgkazan"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
@@ -53,6 +53,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:$supportVersion"
     compile "com.android.support:recyclerview-v7:$supportVersion"
+    compile "com.android.support:cardview-v7:$supportVersion"
 
     compile "io.reactivex:rxjava:$rxjavaVersion"
     compile "io.reactivex:rxandroid:$rxandroidVersion"

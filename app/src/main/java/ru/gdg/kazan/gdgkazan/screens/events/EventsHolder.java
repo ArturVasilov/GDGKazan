@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import ru.gdg.kazan.gdgkazan.BuildConfig;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
 
@@ -22,18 +21,23 @@ import ru.gdg.kazan.gdgkazan.models.Event;
  */
 public class EventsHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.imageView)
+    @BindView(R.id.eventPreviewImage)
     ImageView mEventImage;
 
-    @BindView(R.id.tvEventName)
+    @BindView(R.id.eventNameText)
     TextView mEventName;
+
+    @BindView(R.id.eventDescriptionText)
+    TextView mDescriptionText;
+
+    @BindView(R.id.moreText)
+    View mMoreText;
 
     private Event mEvent;
     private Context mContext;
 
     @NonNull
     private EventsActionListener mListener;
-
 
     public EventsHolder(@NonNull View itemView, @NonNull Context context, @NonNull EventsActionListener listener) {
         super(itemView);
@@ -42,6 +46,7 @@ public class EventsHolder extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
+    @NonNull
     public static EventsHolder buildForParent(@NonNull ViewGroup parent, @NonNull Context context,
                                               @NonNull EventsActionListener listener) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -53,10 +58,15 @@ public class EventsHolder extends RecyclerView.ViewHolder {
         mEvent = event;
         Picasso.with(mContext)
                 .load(event.getPreviewImage())
+                .placeholder(R.drawable.image_background)
+                .error(R.drawable.image_background)
                 .into(mEventImage);
         mEventName.setText(mEvent.getName());
-    }
+        mDescriptionText.setText(event.getPreviewDescription());
 
+        itemView.setOnClickListener(view -> mListener.onEventClick(mEvent));
+        mMoreText.setOnClickListener(view -> mListener.onEventClick(mEvent));
+    }
 
     public interface EventsActionListener {
         void onEventClick(@NonNull Event event);

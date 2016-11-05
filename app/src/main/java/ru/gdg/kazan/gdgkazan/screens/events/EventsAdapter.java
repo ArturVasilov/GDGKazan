@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 import ru.gdg.kazan.gdgkazan.models.Event;
@@ -15,17 +15,17 @@ import ru.gdg.kazan.gdgkazan.models.Event;
  */
 public class EventsAdapter extends RecyclerView.Adapter<EventsHolder> {
 
-    private List<Event> mEvents = Collections.emptyList();
-
-    @NonNull
-    private EventsHolder.EventsActionListener mListener;
+    private final List<Event> mEvents = new ArrayList<>();
 
     @NonNull
     private Context mContext;
 
-    public EventsAdapter(@NonNull EventsHolder.EventsActionListener listener, @NonNull Context context) {
-        mListener = listener;
+    @NonNull
+    private EventsHolder.EventsActionListener mListener;
+
+    public EventsAdapter(@NonNull Context context, @NonNull EventsHolder.EventsActionListener listener) {
         mContext = context;
+        mListener = listener;
     }
 
     @Override
@@ -43,8 +43,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsHolder> {
         return mEvents.size();
     }
 
-    public void changeDataSet(List<Event> events) {
-        mEvents = Collections.unmodifiableList(events);
+    public void changeDataSet(@NonNull List<Event> events) {
+        mEvents.clear();
+        mEvents.addAll(events);
         notifyDataSetChanged();
     }
 }
