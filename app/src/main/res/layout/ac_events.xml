@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".screens.events.EventsActivity"
-    >
+    tools:context=".screens.events.EventsActivity">
+
+    <include layout="@layout/toolbar"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvEvents"
+        android:id="@+id/eventsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

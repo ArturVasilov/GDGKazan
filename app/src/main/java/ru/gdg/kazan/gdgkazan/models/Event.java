@@ -4,13 +4,14 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * @author Artur Vasilov
  */
-public class Event {
+public class Event implements Serializable {
 
     @SerializedName("id")
     private int mId;

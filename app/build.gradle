@@ -54,6 +54,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:$supportVersion"
     compile "com.android.support:recyclerview-v7:$supportVersion"
     compile "com.android.support:cardview-v7:$supportVersion"
+    compile "com.android.support:design:$supportVersion"
 
     compile "io.reactivex:rxjava:$rxjavaVersion"
     compile "io.reactivex:rxandroid:$rxandroidVersion"
