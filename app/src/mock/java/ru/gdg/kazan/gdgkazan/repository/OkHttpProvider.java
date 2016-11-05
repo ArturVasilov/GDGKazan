@@ -3,14 +3,11 @@ package ru.gdg.kazan.gdgkazan.repository;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.facebook.stetho.okhttp3.StethoInterceptor;
-
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +19,7 @@ import ru.gdg.kazan.gdgkazan.models.EventsFactory;
 import rx.functions.Func2;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public class OkHttpProvider {
 
@@ -32,7 +29,6 @@ public class OkHttpProvider {
 
     private static final Map<String, Func2<Context, Request, Response>> RESPONSES = new ConcurrentHashMap<>();
 
-
     static {
         RESPONSES.put("/api/v1/events", EventsFactory.response());
 
@@ -41,9 +37,7 @@ public class OkHttpProvider {
         refreshEnabled(enableMethods);
     }
 
-
     private OkHttpProvider() {
-        //Not implemented
     }
 
     public static boolean refreshEnabled(@NonNull List<String> enabledMethods) {
@@ -52,14 +46,9 @@ public class OkHttpProvider {
     }
 
     @NonNull
-    public static Set<String> getAvailableMethods() {
-        return RESPONSES.keySet();
-    }
-
     public static OkHttpClient provideClient(@NonNull Context context) {
         return new OkHttpClient.Builder()
                 .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-                .addNetworkInterceptor(new StethoInterceptor())
                 .addInterceptor(chain -> {
                     final Request request = chain.request();
                     try {

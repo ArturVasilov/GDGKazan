@@ -13,8 +13,6 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
 
-        buildConfigField "String", "API_BASE_URL", '"https://temporyurl.ru/"'
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -60,26 +58,15 @@ dependencies {
     compile "io.reactivex:rxandroid:$rxandroidVersion"
     compile "ru.arturvasilov:rx-loader:$rxLoaderVersion"
 
-    compile("com.squareup.retrofit2:retrofit:$retrofitVersion") {
-        exclude module: 'okhttp'
-    }
-    compile "com.squareup.retrofit2:converter-jackson:$retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
     compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
     compile "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 
-    compile "com.facebook.stetho:stetho:$stethoVersion"
-    compile "com.facebook.stetho:stetho-okhttp3:$stethoVersion"
-
-    compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
-    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
-    compile "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+    compile 'com.google.code.gson:gson:2.8.0'
 
     compile "com.jakewharton:butterknife:$butterKnifeVersion"
     apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
-    compile "com.squareup.picasso:picasso:$picassoVersion"
-
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
     testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

@@ -4,11 +4,11 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import ru.gdg.kazan.gdgkazan.base.view.LoadingView;
 import ru.gdg.kazan.gdgkazan.models.Event;
+import ru.gdg.kazan.gdgkazan.screens.general.LoadingView;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public interface EventsView extends LoadingView {
 

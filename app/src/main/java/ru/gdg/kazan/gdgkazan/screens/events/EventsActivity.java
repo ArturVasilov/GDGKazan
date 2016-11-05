@@ -14,13 +14,12 @@ import butterknife.ButterKnife;
 import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.arturvasilov.rxloader.LoaderLifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
-import ru.gdg.kazan.gdgkazan.base.view.LoadingView;
-import ru.gdg.kazan.gdgkazan.dialogs.LoadingDialog;
 import ru.gdg.kazan.gdgkazan.models.Event;
-import ru.gdg.kazan.gdgkazan.rx.RxError;
+import ru.gdg.kazan.gdgkazan.screens.general.LoadingDialog;
+import ru.gdg.kazan.gdgkazan.screens.general.LoadingView;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public class EventsActivity extends AppCompatActivity implements EventsView, EventsHolder.EventsActionListener {
 
@@ -44,7 +43,7 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
 
         setupRecyclerView();
 
-        mPresenter = new EventsPresenter(this, lifecycleHandler, RxError.view(this));
+        mPresenter = new EventsPresenter(this, lifecycleHandler);
         mPresenter.init();
     }
 
@@ -54,13 +53,13 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     }
 
     @Override
-    public void showLoadingIndicator() {
-        mLoadingView.showLoadingIndicator();
+    public void showLoading() {
+        mLoadingView.showLoading();
     }
 
     @Override
-    public void hideLoadingIndicator() {
-        mLoadingView.hideLoadingIndicator();
+    public void hideLoading() {
+        mLoadingView.hideLoading();
     }
 
     @Override

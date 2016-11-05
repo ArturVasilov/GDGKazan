@@ -13,13 +13,14 @@ import ru.gdg.kazan.gdgkazan.repository.OkHttpResponse;
 import rx.functions.Func2;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public final class EventsFactory {
 
     private EventsFactory() {
     }
 
+    @SuppressWarnings("TryFinallyCanBeTryWithResources")
     @NonNull
     public static Func2<Context, Request, Response> response() {
         return (context, request) -> {
@@ -28,7 +29,10 @@ public final class EventsFactory {
                 try {
                     return OkHttpResponse.success(request, stream);
                 } finally {
-                    stream.close();
+                    try {
+                        stream.close();
+                    } catch (IOException ignored) {
+                    }
                 }
             } catch (IOException e) {
                 Log.e(EventsFactory.class.getSimpleName(), e.getMessage(), e);

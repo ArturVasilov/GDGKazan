@@ -1,11 +1,11 @@
 package ru.gdg.kazan.gdgkazan.models;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public enum EventStatus {
 
     PLANNED,
     ACTIVE,
-    PASSED
+    FINISHED
 }

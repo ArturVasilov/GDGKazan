@@ -2,49 +2,44 @@ package ru.gdg.kazan.gdgkazan.models;
 
 import android.support.annotation.NonNull;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.Collections;
 import java.util.List;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Event {
 
-    @JsonProperty("id")
-    private long mId;
+    @SerializedName("id")
+    private int mId;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String mName;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String mDescription;
 
-    @JsonProperty("date_start")
+    @SerializedName("date_start")
     private String mDateStart;
 
-    @JsonProperty("date_finish")
+    @SerializedName("date_finish")
     private String mDateFinish;
 
-    @JsonProperty("status")
+    @SerializedName("status")
     private EventStatus mStatus;
 
-    @JsonProperty("preview_img")
+    @SerializedName("preview_img")
     private String mPreviewImage;
 
-    @JsonProperty("header_img")
-    private String mHeaderImage;
+    @SerializedName("photos")
+    private List<Photo> mPhotos;
 
-    @JsonProperty("photos")
-    private List<String> mPhotos;
+    @SerializedName("links")
+    private List<Link> mLinks;
 
-    @JsonProperty("links")
-    private List<String> mLinks;
-
-    public long getId() {
+    public int getId() {
         return mId;
     }
 
@@ -79,12 +74,7 @@ public class Event {
     }
 
     @NonNull
-    public String getHeaderImage() {
-        return mHeaderImage;
-    }
-
-    @NonNull
-    public List<String> getPhotos() {
+    public List<Photo> getPhotos() {
         if (mPhotos == null) {
             return Collections.emptyList();
         }
@@ -92,7 +82,7 @@ public class Event {
     }
 
     @NonNull
-    public List<String> getLinks() {
+    public List<Link> getLinks() {
         if (mLinks == null) {
             return Collections.emptyList();
         }

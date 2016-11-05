@@ -1,4 +1,4 @@
-package ru.gdg.kazan.gdgkazan.dialogs;
+package ru.gdg.kazan.gdgkazan.screens.general;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -9,17 +9,16 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import ru.gdg.kazan.gdgkazan.R;
-import ru.gdg.kazan.gdgkazan.base.view.LoadingView;
-
 
 /**
- * @author Daniel Serdyukov
+ * @author Artur Vasilov
  */
 public class LoadingDialog extends DialogFragment {
 
@@ -27,24 +26,7 @@ public class LoadingDialog extends DialogFragment {
 
     @NonNull
     public static LoadingView view(@NonNull FragmentManager fm) {
-        return new LoadingView() {
-
-            private AtomicBoolean mWaitForHide = new AtomicBoolean();
-
-            @Override
-            public void showLoadingIndicator() {
-                if (mWaitForHide.compareAndSet(false, true)) {
-                    new LoadingDialog().show(fm, LoadingDialog.class.getName());
-                }
-            }
-
-            @Override
-            public void hideLoadingIndicator() {
-                if (mWaitForHide.compareAndSet(true, false)) {
-                    HANDLER.post(new HideTask(fm));
-                }
-            }
-        };
+        return new LoadingDialogView(fm);
     }
 
     @NonNull
@@ -53,16 +35,48 @@ public class LoadingDialog extends DialogFragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setStyle(STYLE_NO_TITLE, getTheme());
+        setCancelable(false);
+    }
+
+    @NonNull
+    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new AlertDialog.Builder(getActivity(), R.style.AppTheme_Dialog)
-                .setView(R.layout.ft_loading)
+        return new AlertDialog.Builder(getActivity())
+                .setView(View.inflate(getActivity(), R.layout.dialog_loading, null))
                 .create();
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        setCancelable(false);
+    private static class LoadingDialogView implements LoadingView {
+
+        private final FragmentManager mFm;
+
+        private final AtomicBoolean mWaitForHide;
+
+        private LoadingDialogView(@NonNull FragmentManager fm) {
+            mFm = fm;
+            boolean shown = fm.findFragmentByTag(LoadingDialog.class.getName()) != null;
+            mWaitForHide = new AtomicBoolean(shown);
+        }
+
+        @Override
+        public void showLoading() {
+            if (mWaitForHide.compareAndSet(false, true)) {
+                if (mFm.findFragmentByTag(LoadingDialog.class.getName()) == null) {
+                    DialogFragment dialog = new LoadingDialog();
+                    dialog.show(mFm, LoadingDialog.class.getName());
+                }
+            }
+        }
+
+        @Override
+        public void hideLoading() {
+            if (mWaitForHide.compareAndSet(true, false)) {
+                HANDLER.post(new HideTask(mFm));
+            }
+        }
     }
 
     private static class HideTask implements Runnable {
@@ -88,7 +102,6 @@ public class LoadingDialog extends DialogFragment {
                 }
             }
         }
-
     }
 
 }

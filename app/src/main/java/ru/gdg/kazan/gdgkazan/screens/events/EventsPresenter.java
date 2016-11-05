@@ -1,32 +1,31 @@
 package ru.gdg.kazan.gdgkazan.screens.events;
 
+import android.support.annotation.NonNull;
+
 import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
-import ru.gdg.kazan.gdgkazan.base.view.ErrorView;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
-import ru.gdg.kazan.gdgkazan.rx.RxDecor;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public class EventsPresenter {
 
-    private LifecycleHandler mLifecycleHandler;
-    private ErrorView mErrorView;
+    private final LifecycleHandler mLifecycleHandler;
     private final EventsView mView;
 
-    public EventsPresenter(EventsView view, LifecycleHandler lifecycleHandler, ErrorView errorView) {
+    public EventsPresenter(@NonNull EventsView view, @NonNull LifecycleHandler lifecycleHandler) {
         mView = view;
         mLifecycleHandler = lifecycleHandler;
-        mErrorView = errorView;
     }
 
     public void init() {
-        RepositoryProvider.provideShopsRepository()
+        RepositoryProvider.provideEventsRepository()
                 .fetchEvents()
-                .doOnSubscribe(mView::showLoadingIndicator)
-                .doOnTerminate(mView::hideLoadingIndicator)
+                .doOnSubscribe(mView::showLoading)
+                .doOnTerminate(mView::hideLoading)
                 .compose(mLifecycleHandler.load(R.id.events_request))
-                .subscribe(mView::showEvents, throwable -> RxDecor.error(mErrorView));
+                .subscribe(mView::showEvents, throwable -> {
+                });
     }
 }

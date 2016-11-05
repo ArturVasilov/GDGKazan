@@ -3,32 +3,22 @@ package ru.gdg.kazan.gdgkazan.repository;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import ru.gdg.kazan.gdgkazan.api.ApiFactory;
-import ru.gdg.kazan.gdgkazan.repository.events.EventsRepository;
-import ru.gdg.kazan.gdgkazan.repository.events.EventsService;
-
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public class RepositoryProvider {
 
     @Nullable
     private static EventsRepository sEventsRepository;
 
-
     private RepositoryProvider() {
         //Not implemented
     }
 
     @NonNull
-    private static <T> T getServiceInstance(Class<T> clazz) {
-        return ApiFactory.getRetrofitInstance().create(clazz);
-    }
-
-    @NonNull
-    public static EventsRepository provideShopsRepository() {
+    public static EventsRepository provideEventsRepository() {
         if (sEventsRepository == null) {
-            sEventsRepository = new EventsRepository(getServiceInstance(EventsService.class));
+            sEventsRepository = new EventsRepository();
         }
         return sEventsRepository;
     }

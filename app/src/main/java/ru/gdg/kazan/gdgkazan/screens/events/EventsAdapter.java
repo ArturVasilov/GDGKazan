@@ -11,11 +11,12 @@ import java.util.List;
 import ru.gdg.kazan.gdgkazan.models.Event;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public class EventsAdapter extends RecyclerView.Adapter<EventsHolder> {
 
     private List<Event> mEvents = Collections.emptyList();
+
     @NonNull
     private EventsHolder.EventsActionListener mListener;
 

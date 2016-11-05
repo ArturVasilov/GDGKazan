@@ -18,17 +18,19 @@ import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
 
 /**
- * @author Valiev Timur.
+ * @author Artur Vasilov
  */
 public class EventsHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.imageView)
     ImageView mEventImage;
+
     @BindView(R.id.tvEventName)
     TextView mEventName;
 
     private Event mEvent;
     private Context mContext;
+
     @NonNull
     private EventsActionListener mListener;
 
@@ -50,7 +52,7 @@ public class EventsHolder extends RecyclerView.ViewHolder {
     public void bindView(@NonNull Event event) {
         mEvent = event;
         Picasso.with(mContext)
-                .load(BuildConfig.API_BASE_URL + mEvent.getPreviewImage())
+                .load(event.getPreviewImage())
                 .into(mEventImage);
         mEventName.setText(mEvent.getName());
     }

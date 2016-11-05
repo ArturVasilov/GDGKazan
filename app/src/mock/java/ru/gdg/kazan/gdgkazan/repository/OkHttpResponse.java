@@ -2,9 +2,6 @@ package ru.gdg.kazan.gdgkazan.repository;
 
 import android.support.annotation.NonNull;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -16,32 +13,15 @@ import okhttp3.ResponseBody;
 import okio.Buffer;
 
 /**
- * @author Daniel Serdyukov
+ * @author Artur Vasilov
  */
 public final class OkHttpResponse {
-
-    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     private static final byte[] EMPTY_BODY = new byte[0];
 
     private static final MediaType APPLICATION_JSON = MediaType.parse("application/json");
 
     private OkHttpResponse() {
-    }
-
-    @NonNull
-    public static Response success(@NonNull Request request, @NonNull Object body) throws JsonProcessingException {
-        return success(request, MAPPER.writeValueAsString(body));
-    }
-
-    @NonNull
-    public static Response success(@NonNull Request request, @NonNull String json) {
-        return new Response.Builder()
-                .request(request)
-                .protocol(Protocol.HTTP_1_1)
-                .code(200).message("OK")
-                .body(ResponseBody.create(APPLICATION_JSON, json))
-                .build();
     }
 
     @NonNull
