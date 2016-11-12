@@ -117,7 +117,7 @@
     "name": "Google I/O Extended",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawQXAwWllub2JFalE",
     "preview_description": "Google I/O Extended \u2014 прямая трансляция с Google I/O 2016 и живое обсуждение всех самых интересных новинок от Google.\n\nВстреча прошла 19 мая 2016 года.",
-    "description": "Google I/O Extended \u2014 уникальная возможность стать участником одного из самых крупных слётов любителей Google-технологий. Всё будет происходить в онлайн-режиме, так что вы сможете вместе с представителями GDG наблюдать за ежегодной презентацией самых крутых новинок в IT мире! Сейчас I/O Extended включает более 550 ивентов в 94 странах на 6 континентах и охватывает всю планету.<br><br>Вместе с миллионами других человек вы увидите Keynote, включающий обзор ключевых трендов конференции и прогноз новинок на грядущий год, поучаствуете в живом обсуждении новых технологий вместе с другими представителями коммьюнити, увидите как проходит I/O Extended в других сообществах GDG по всей планете.",
+    "description": "Google I/O Extended \u2014 уникальная возможность стать участником одного из самых крупных слётов любителей Google-технологий. Всё будет происходить в онлайн-режиме, так что вы сможете вместе с представителями GDG наблюдать за ежегодной презентацией самых крутых новинок в IT мире! Сейчас I/O Extended включает более 550 ивентов в 94 странах на 6 континентах и охватывает всю планету.\n\nВместе с миллионами других человек вы увидите Keynote, включающий обзор ключевых трендов конференции и прогноз новинок на грядущий год, поучаствуете в живом обсуждении новых технологий вместе с другими представителями коммьюнити, увидите как проходит I/O Extended в других сообществах GDG по всей планете.",
     "subscription_possible": false,
     "is_pinned": false,
     "photos": [
@@ -206,7 +206,7 @@
     "name": "Android Meetup",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawenVHdUpNdzZuMm8",
     "preview_description": "Митап по самым последним технологиям из мира Android-разработки.\n\nМитап прошел 1 сентября 2016 года.",
-    "description": "Митап по самым последним технологиям от Google: Android N и Firebase. Firebase \u2014 это основная технология года для Android-разработчиков, поэтому мы рассматриваем ее особенно подробно. При этом доклады будут на достаточно неплохом уровне и рассчитаны на людей с определенным опытом в разработке под Android.<br><br>На митапе запланировано 3 доклада. Тимур Валиев расскажет про новые возможности Android N, и что нужно знать разработчику, чтобы подготовить приложение к выходу новой версии. Равиль Губайдуллин познакомит всех с возможностями новой платформы Firebase, а после Артур Василов на практике покажет, как интегрировать Firebase в ваше приложение.",
+    "description": "Митап по самым последним технологиям от Google: Android N и Firebase. Firebase \u2014 это основная технология года для Android-разработчиков, поэтому мы рассматриваем ее особенно подробно. При этом доклады будут на достаточно неплохом уровне и рассчитаны на людей с определенным опытом в разработке под Android.\n\nНа митапе запланировано 3 доклада. Тимур Валиев расскажет про новые возможности Android N, и что нужно знать разработчику, чтобы подготовить приложение к выходу новой версии. Равиль Губайдуллин познакомит всех с возможностями новой платформы Firebase, а после Артур Василов на практике покажет, как интегрировать Firebase в ваше приложение.",
     "subscription_possible": false,
     "is_pinned": false,
     "photos": [
@@ -327,7 +327,7 @@
     "name": "Школа Android-разработчиков",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawV1lOMFlOeUpHTXc",
     "preview_description": "Первая бесплатная школа для профессиональных Android-разработчиков по архитектуре клиент-серверных приложений.\n\nШкола прошла в сентябре 2016 года.",
-    "description": "В Казани пройдет первая школа Android-разработчиков. Преподаватели \u2014 руководители Google Developers Group Kazan, ведущие разработчики компаний e-Legion и DZ-systems, в течение 3 недель будут обучать студентов тонкостям разработки Android-приложений. Курс будет посвящен архитектуре клиент-серверных приложений.<br><br>Обучение очное и бесплатное. Занятия будут проходить 3 раза в неделю. Каждый выпускник получит сертификат, подтверждающий прохождение курса.",
+    "description": "В Казани пройдет первая школа Android-разработчиков. Преподаватели \u2014 руководители Google Developers Group Kazan, ведущие разработчики компаний e-Legion и DZ-systems, в течение 3 недель будут обучать студентов тонкостям разработки Android-приложений. Курс будет посвящен архитектуре клиент-серверных приложений.\n\nОбучение очное и бесплатное. Занятия будут проходить 3 раза в неделю. Каждый выпускник получит сертификат, подтверждающий прохождение курса.",
     "subscription_possible": false,
     "is_pinned": false,
     "photos": [
@@ -390,108 +390,60 @@
   {
     "id": 5,
     "name": "GDG Developers Meetup",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
-    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawLVJNcmhFS00zTmM",
+    "preview_description": "Митап от GDG Kazan для разработчиков по общей тематике.\n\nМитап прошел 2 ноября 2016 года.",
+    "description": "Митап от GDG Kazan для разработчиков по общей тематике. В рамках митапа будет 2 доклада от Артура Василова.\n\nПервый доклад посвящен безопасности системы Android и приложений под Android. Все, что нужно знать как пользователю, так и разработчику, будет рассмотрено в этом докладе.\n\nВторой доклад затрагивает набирающую популярность технологию Beacons, рассматриваются варианты использования биконов, а также концецпия Physical Web и примеры ее применения в реальной жизни.",
     "subscription_possible": false,
     "is_pinned": false,
-    "photos": [
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
-      },
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
-      }
-    ],
+    "photos": [],
     "links": [
       {
-        "title": "Конференция Google I/O 2016",
-        "url": "https://events.google.com/io2016/"
+        "title": "Презентация по безопасности в Android",
+        "url": "https://docs.google.com/presentation/d/1Kv0BaUUhJA2IdMIv5YbqXHn4od9RS7GIK-fpsh3dnuw/edit?usp=sharing"
       },
       {
-        "title": "Информация о Google I/O Extended 2016 на Habrahabr",
-        "url": "https://habrahabr.ru/company/google/blog/283442/"
+        "title": "Таблица полезных ссылок по безопаности в Android",
+        "url": "https://docs.google.com/spreadsheets/d/1zlkSnUkMxOaLUtYxWbG_eU7z4Hii3oefm41PT1bn86U/edit?usp=sharing"
       },
       {
-        "title": "Фотоотчет со I/O Extended 2016",
-        "url": "https://vk.com/album-119719934_231960222"
+        "title": "Презентация по биконам и концепции Physical Web",
+        "url": "https://docs.google.com/presentation/d/1uhnztTlPxVYr2UPzQYHw6O1bWhM4lHqbIotmzDBfB6o/edit?usp=sharing"
+      },
+      {
+        "title": "Статья про использование биконов в Android-приложениях",
+        "url": "https://habrahabr.ru/post/279381/"
       }
     ]
   },
   {
     "id": 6,
     "name": "DevFest Kazan 2016",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
-    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawSFlGMWZzSnV4cnc",
+    "preview_description": "DevFest \u2014 это глобальное событие, проводимое сообществами Google Developers Group по всему миру для разработчиков и IT-специалистов.\n\nВ Татарстане DevFest пройдет в Иннополисе 26 ноября.",
+    "description": "DevFest \u2014 это глобальное событие, проводимое сообществами Google Developers Group по всему миру для разработчиков и IT-специалистов. В Татарстане DevFest организуют сообщество Google Developers Group Kazan и город Иннополис.\n\nDevFest Kazan \u2014 это:\n\u25cf 300 участников, которые хотят быть в курсе последних технологий\n\u25cf 10 докладов от самых крутых спикеров: Google Developer Experts, руководители и ведущие разработчики топовых компаний\n\u25cf 4 мастер-класса, на которых можно попробовать свои силы на практике\n\u25cf Самые актуальные темы: Android, Firebase, VR, IoT и другие\n\u25cf А также неповторимая атмосфера IT-праздника!\n\nДля конференции мы собрали самых лучших, опытных и известных докладчиков со всей России!\n\nНа DevFest Kazan 2016 выступят:\n\u25cf Денис Неклюдов (GDE Android, Revolut) \u2014 разработка для умных часов\n\u25cf Звиад Кардава (GDE IoT, voximplant) \u2014 IoT\n\u25cf Михаил Вайсман (Trinity Digital) \u2014 разработка для Google Cardboard\n\u25cf Александр Коршак (MERA, GDG) \u2014 VR\n\u25cf Артур Василов (e-Legion, GDG) \u2014 Firebase в Android\n\u25cf Сергей Пугачев (Google) \u2014 Progressive Web Apps\n\u25cf Даниил Подольский (inCaller) \u2014 два доклада: Go и NoSQL\n\u25cf Марат Фахреев (Flatstack) \u2014 Unidirectional Architectures vs MVC in front-end\n\u25cf Айнур Минибаев (MusicSense) \u2014 ферма для тестирования Android-приложений на Docker\n\nПосле окончания конференции видеозаписи все докладов будут выложены в общий доступ.",
     "subscription_possible": true,
     "is_pinned": true,
-    "photos": [
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
-      },
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
-      }
-    ],
+    "photos": [],
     "links": [
       {
-        "title": "Официальный сайт курсов Study Jams",
-        "url": "http://developerstudyjams.com/"
+        "title": "Общая информация о DevFest",
+        "url": "https://developers.google.com/events/devfest/"
       },
       {
-        "title": "Информация о курсах на Habrahabr",
-        "url": "https://habrahabr.ru/company/google/blog/277771/"
-      },
-      {
-        "title": "Фотоотчет со Study Jams",
-        "url": "https://vk.com/album-119719934_230943855"
-      },
-      {
-        "title": "Курс на Udacity для начинающих Android-разработчиков",
-        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
+        "title": "Официальный сайт конференции DevFest Kazan 2016",
+        "url": "http://devfest2016.ru/kzn/"
       }
     ]
   },
   {
     "id": 7,
     "name": "Machine Learning Meetup",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
-    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawM0xKNWpuakR5cnM",
+    "preview_description": "Первый митап по машинному обучению от GDG Kazan.\n\nПодробная информация о митапе появится в начале декабря.",
+    "description": "Первый митап по машинному обучению от GDG Kazan. На митапе будут рассмотрены обработка изображений и текстов, а также другие интересные задачи из области машинного обучения.\n\nМитап состоится в середине декабря, а подробная информация о нем появится в начале декабря. Следите за новостями!",
     "subscription_possible": true,
     "is_pinned": false,
-    "photos": [
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
-      },
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
-      }
-    ],
-    "links": [
-      {
-        "title": "Официальный сайт курсов Study Jams",
-        "url": "http://developerstudyjams.com/"
-      },
-      {
-        "title": "Информация о курсах на Habrahabr",
-        "url": "https://habrahabr.ru/company/google/blog/277771/"
-      },
-      {
-        "title": "Фотоотчет со Study Jams",
-        "url": "https://vk.com/album-119719934_230943855"
-      },
-      {
-        "title": "Курс на Udacity для начинающих Android-разработчиков",
-        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
-      }
-    ]
+    "photos": [],
+    "links": []
   }
 ]

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +21,6 @@ import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
 import ru.gdg.kazan.gdgkazan.models.Photo;
-import ru.gdg.kazan.gdgkazan.utils.HtmlCompat;
 
 /**
  * @author Artur Vasilov
@@ -31,6 +31,9 @@ public class EventActivity extends AppCompatActivity implements EventView {
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
+
+    @BindView(R.id.scrollView)
+    NestedScrollView mNestedScrollView;
 
     @BindView(R.id.eventDescriptionText)
     TextView mDescriptionText;
@@ -63,6 +66,7 @@ public class EventActivity extends AppCompatActivity implements EventView {
         mToolbar.setNavigationIcon(R.drawable.ic_back_white);
         mToolbar.setNavigationOnClickListener(view -> onBackPressed());
 
+        mNestedScrollView.setNestedScrollingEnabled(false);
         mLinksRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mPhotosRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
@@ -80,7 +84,7 @@ public class EventActivity extends AppCompatActivity implements EventView {
 
     @Override
     public void showDescription(@NonNull String description) {
-        mDescriptionText.setText(HtmlCompat.fromHtml(description));
+        mDescriptionText.setText(description);
     }
 
     @Override
