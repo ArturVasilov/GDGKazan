@@ -72,13 +72,14 @@ public class EventsHolder extends RecyclerView.ViewHolder {
                 .load(event.getPreviewImage())
                 .placeholder(R.drawable.image_background)
                 .error(R.drawable.image_background)
+                .noFade()
                 .into(mEventImage);
         mEventName.setText(mEvent.getName());
         mDescriptionText.setText(event.getPreviewDescription());
 
         itemView.setOnClickListener(view -> mListener.onEventClick(mEvent));
         mMoreText.setOnClickListener(view -> mListener.onEventClick(mEvent));
-        mNotificationsSwitcher.setOnClickListener(view -> {
+        mNotificationsBar.setOnClickListener(view -> {
         });
 
         if (!mEvent.isSubscriptionPossible()) {

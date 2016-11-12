@@ -55,6 +55,9 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
         public void bind(@NonNull Photo photo) {
             Picasso.with(itemView.getContext())
                     .load(photo.getUrl())
+                    .noFade()
+                    .placeholder(R.drawable.image_background_2)
+                    .error(R.drawable.image_background_2)
                     .into(mPhoto);
             mPhoto.setContentDescription(photo.getTitle());
         }

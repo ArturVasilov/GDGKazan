@@ -25,5 +25,5 @@
     <dimen name="text.24">24sp</dimen>
     <dimen name="text.26">26sp</dimen>
 
-    <dimen name="photo.preview_height">200dp</dimen>
+    <dimen name="photo.preview_height">250dp</dimen>
 </resources>

@@ -18,9 +18,6 @@ import ru.gdg.kazan.gdgkazan.models.database.ConfigTable;
  */
 public class GDGKazanApp extends Application {
 
-    private static final int MEGABYTES_IN_BYTES = 1024 * 1024;
-    private static final int DEFAULT_MEGABYTES_COUNT = 50;
-
     @SuppressLint("StaticFieldLeak")
     private static Context sAppContext;
 
@@ -35,8 +32,7 @@ public class GDGKazanApp extends Application {
         config.setValue("https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYVBrM0xXTmI2SG8");
         SQLite.get().insert(ConfigTable.TABLE, config);
 
-        int megabytes = DEFAULT_MEGABYTES_COUNT * MEGABYTES_IN_BYTES; //50 megabytes
-        Downloader downloader = new OkHttp3Downloader(this, megabytes);
+        Downloader downloader = new OkHttp3Downloader(this);
         Picasso picasso = new Picasso.Builder(this).downloader(downloader).build();
         try {
             Picasso.setSingletonInstance(picasso);

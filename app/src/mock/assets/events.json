@@ -3,14 +3,90 @@
     "id": 1,
     "name": "Study Jams",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
-    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру.\n\nКурсы прошли в марте-апреле 2016 года.",
     "description": "GDG Kazan вместе с другими городами мира проводит бесплатные курсы Android StudyJams для всех желающих познакомиться с разработкой под Android.",
     "subscription_possible": false,
     "is_pinned": false,
     "photos": [
       {
         "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbWdUWFIyQzctaTg"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawck1DYW5GZVJ3Smc"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdllyLVI2TUlGbzA"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawZGZvNzBGSXoxRE0"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawMkwtNm1aWXBwbjQ"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawX3RFSjI3U2tJeGM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawQU5Fb3kyWXFMYXM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdUd3R0g3T21mX28"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawOE9NTUJseEVObzQ"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawZjRmU3g1NU5QcHc"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbmw4UDNzaENPTDA"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawS3lLX0g5SE1MVU0"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawaTBPbmEzNTVBbVk"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbU1TZ3dlampHZ3c"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawWUVILThZMkF4dG8"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTkMwRVJfTm1FYkk"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTzNHNTV4eGhLZFE"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawenBPQ1BCdFpTdkE"
+      },
+      {
+        "title": "",
         "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawMk41cFZybTZ3Mms"
       },
       {
         "title": "",
@@ -40,7 +116,7 @@
     "id": 2,
     "name": "Google I/O Extended",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawQXAwWllub2JFalE",
-    "preview_description": "Google I/O Extended \u2014 прямая трансляция с Google I/O 2016 и живое обсуждение всех самых интересных новинок от Google",
+    "preview_description": "Google I/O Extended \u2014 прямая трансляция с Google I/O 2016 и живое обсуждение всех самых интересных новинок от Google.\n\nВстреча прошла 19 мая 2016 года.",
     "description": "Google I/O Extended \u2014 уникальная возможность стать участником одного из самых крупных слётов любителей Google-технологий. Всё будет происходить в онлайн-режиме, так что вы сможете вместе с представителями GDG наблюдать за ежегодной презентацией самых крутых новинок в IT мире! Сейчас I/O Extended включает более 550 ивентов в 94 странах на 6 континентах и охватывает всю планету.<br><br>Вместе с миллионами других человек вы увидите Keynote, включающий обзор ключевых трендов конференции и прогноз новинок на грядущий год, поучаствуете в живом обсуждении новых технологий вместе с другими представителями коммьюнити, увидите как проходит I/O Extended в других сообществах GDG по всей планете.",
     "subscription_possible": false,
     "is_pinned": false,
@@ -55,67 +131,59 @@
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawSVlGQ2Jwd0RIb28"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawZE16RUpYd1lhU2c"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbzMzSHQ1UHU5Qkk"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawVW0xVGpEeHh5Wjg"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN2xfXzRGOTVoME0"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawNHlUQmNhQnE2UjA"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawRjhYUk5Ga1FDeXM"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawMWJ4Sy1HUWVPcVk"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawY3dRVjlrUk4yZEE"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdWduTnBTcFFoeVE"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbXZfOTE1V0VTQjg"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawY1pReE50ZExNaTQ"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawM2lqQjZOVW1RbWs"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
-      },
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
-      },
-      {
-        "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawOGowaE1XcTIta3M"
       }
     ],
     "links": [
@@ -136,56 +204,192 @@
   {
     "id": 3,
     "name": "Android Meetup",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
-    "preview_description": "Митап по самым последним технологиям из мира Android-разработки",
-    "description": "Митап по самым последним технологиям из мира Android-разработки. Доклады посвящены новым возможностям Android N и платформе Firebase.",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawenVHdUpNdzZuMm8",
+    "preview_description": "Митап по самым последним технологиям из мира Android-разработки.\n\nМитап прошел 1 сентября 2016 года.",
+    "description": "Митап по самым последним технологиям от Google: Android N и Firebase. Firebase \u2014 это основная технология года для Android-разработчиков, поэтому мы рассматриваем ее особенно подробно. При этом доклады будут на достаточно неплохом уровне и рассчитаны на людей с определенным опытом в разработке под Android.<br><br>На митапе запланировано 3 доклада. Тимур Валиев расскажет про новые возможности Android N, и что нужно знать разработчику, чтобы подготовить приложение к выходу новой версии. Равиль Губайдуллин познакомит всех с возможностями новой платформы Firebase, а после Артур Василов на практике покажет, как интегрировать Firebase в ваше приложение.",
     "subscription_possible": false,
     "is_pinned": false,
     "photos": [
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawREZFZ1JkUUlBYmc"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN1ZXcEVMTkM0X0k"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawY2g2cjd4Y2cwTVk"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN0cySlFsekVLZTA"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawRWZfTHJmdjl5SzQ"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawMWpfZUhjcEJqa00"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawR2c3Tjd6NTZPNWc"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawa1B5ODVkR0hLQ28"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawVkUwSk90Y2RjQkk"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawZy0tdl9kSjBxckU"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWVZNUxFc2VCTG8"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawUkdGel9acHZwM2s"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbFJ5QVVNVGwzZ2M"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawLWRaNlBLNTIxWVE"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTEN4Wi1QVmFNajg"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawRTNTaW5aMXhSM0U"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawVjBkR0pQR0JkQmM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdzR1dUtsblVWUHM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawY3JZX0ZoLTktVGc"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawV01Ybm1LRlZMWXc"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawbjB5NTFfZUNFTEE"
       }
     ],
     "links": [
       {
-        "title": "",
-        "url": ""
+        "title": "Изменения в Android N для разработчиков",
+        "url": "https://developer.android.com/about/versions/nougat/android-7.0.html"
+      },
+      {
+        "title": "Презентация по Android N",
+        "url": "https://docs.google.com/presentation/d/11s82WqHnY79R84sH6VprOfzyPN71vMNBdYhLkiI9zrw/edit?usp=sharing"
+      },
+      {
+        "title": "Firebase для Android",
+        "url": "https://firebase.google.com/docs/android/setup"
+      },
+      {
+        "title": "Презентация Firebase Overview",
+        "url": "https://docs.google.com/presentation/d/1x0KUS1Y94GCbMFkNNcg-zEjXVf6MyjwbmTHjDco4WjE/edit?usp=sharing"
+      },
+      {
+        "title": "Презентация с примерами использования Firebase",
+        "url": "https://docs.google.com/presentation/d/1yzYtMotfUr1qeA8g6oJES2vpbSYAG1aVAbnurvDFWH4/edit?usp=sharing"
+      },
+      {
+        "title": "Пример приложения для чата, построенного на Firebase",
+        "url": "https://github.com/ArturVasilov/AndroidMeetUp16"
       }
     ]
   },
   {
     "id": 4,
-    "name": "Study Jams",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
-    "preview_description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
+    "name": "Школа Android-разработчиков",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawV1lOMFlOeUpHTXc",
+    "preview_description": "Первая бесплатная школа для профессиональных Android-разработчиков по архитектуре клиент-серверных приложений.\n\nШкола прошла в сентябре 2016 года.",
+    "description": "В Казани пройдет первая школа Android-разработчиков. Преподаватели \u2014 руководители Google Developers Group Kazan, ведущие разработчики компаний e-Legion и DZ-systems, в течение 3 недель будут обучать студентов тонкостям разработки Android-приложений. Курс будет посвящен архитектуре клиент-серверных приложений.<br><br>Обучение очное и бесплатное. Занятия будут проходить 3 раза в неделю. Каждый выпускник получит сертификат, подтверждающий прохождение курса.",
     "subscription_possible": false,
     "is_pinned": false,
     "photos": [
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlaweS0zRjM4YVZXTzA"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawR1A1YVUzMzdNN3c"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdDZVV3VSSWFPc00"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdS1tVU5TaEJLODQ"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawdUx1TTMySFZYaWc"
       }
     ],
     "links": [
       {
-        "title": "",
-        "url": ""
+        "title": "Официальный сайт школы Android-разработчиков",
+        "url": "http://www.e-legion.ru/lp/android"
+      },
+      {
+        "title": "Тестовое задание для отбора в школу",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawOXFqNDJnVXB6M3M"
+      },
+      {
+        "title": "Статья на Habrahabr с анонсом отбора в школу Android-разработчиков",
+        "url": "https://habrahabr.ru/company/e-Legion/blog/303272/"
+      },
+      {
+        "title": "Итоги отбора в школу",
+        "url": "https://habrahabr.ru/company/e-Legion/blog/308700/"
+      },
+      {
+        "title": "Рекомендации по изучению и выполнению тестового задания",
+        "url": "https://docs.google.com/document/d/1ercLI5-L7kSBw4T4zNlPBaO0DgViTblgI2yumul_qDo/edit?usp=sharing"
+      },
+      {
+        "title": "Лучшее тестовое задание",
+        "url": "https://github.com/iskandarshabaev/weather"
+      },
+      {
+        "title": "Подвение итогов школы и все материалы по курсу",
+        "url": "https://habrahabr.ru/company/e-Legion/blog/310990/"
+      },
+      {
+        "title": "Репозиторий с примерами кода",
+        "url": "https://github.com/ArturVasilov/AndroidSchool"
       }
     ]
   },
   {
     "id": 5,
-    "name": "Школа Android-разработчиков",
+    "name": "GDG Developers Meetup",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
     "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
     "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
@@ -203,20 +407,16 @@
     ],
     "links": [
       {
-        "title": "Официальный сайт курсов Study Jams",
-        "url": "http://developerstudyjams.com/"
+        "title": "Конференция Google I/O 2016",
+        "url": "https://events.google.com/io2016/"
       },
       {
-        "title": "Информация о курсах на Habrahabr",
-        "url": "https://habrahabr.ru/company/google/blog/277771/"
+        "title": "Информация о Google I/O Extended 2016 на Habrahabr",
+        "url": "https://habrahabr.ru/company/google/blog/283442/"
       },
       {
-        "title": "Фотоотчет со Study Jams",
-        "url": "https://vk.com/album-119719934_230943855"
-      },
-      {
-        "title": "Курс на Udacity для начинающих Android-разработчиков",
-        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
+        "title": "Фотоотчет со I/O Extended 2016",
+        "url": "https://vk.com/album-119719934_231960222"
       }
     ]
   },
