@@ -18,11 +18,12 @@ import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.api.OkHttpUtils;
 import ru.gdg.kazan.gdgkazan.models.Config;
 import ru.gdg.kazan.gdgkazan.models.Event;
+import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.GsonHolder;
 import ru.gdg.kazan.gdgkazan.models.database.ConfigTable;
+import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
 import ru.gdg.kazan.gdgkazan.models.database.EventsTable;
 import rx.Observable;
-import rx.functions.Func1;
 
 /**
  * @author Artur Vasilov
@@ -62,6 +63,14 @@ public class EventsRepository {
                     Collections.sort(events);
                     return events;
                 })
+                .compose(RxUtils.async());
+    }
+
+    @NonNull
+    public Observable<EventSubscription> subscriptionForEvent(@NonNull Event event) {
+        Where eventWhere = Where.create().equalTo(EventSubscriptionsTable.EVENT_ID, event.getId());
+        return RxSQLite.get().querySingle(EventSubscriptionsTable.TABLE, eventWhere)
+                .switchIfEmpty(Observable.just(new EventSubscription(event.getId(), true)))
                 .compose(RxUtils.async());
     }
 }

@@ -22,7 +22,8 @@ public class SQLiteProvider extends SQLiteContentProvider {
 
     @Override
     protected void prepareSchema(@NonNull SQLiteSchema schema) {
-        schema.register(EventsTable.TABLE);
         schema.register(ConfigTable.TABLE);
+        schema.register(EventsTable.TABLE);
+        schema.register(EventSubscriptionsTable.TABLE);
     }
 }

@@ -3,6 +3,7 @@ package ru.gdg.kazan.gdgkazan.screens.events;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,13 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ru.arturvasilov.rxloader.RxUtils;
+import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
+import ru.gdg.kazan.gdgkazan.models.EventSubscription;
+import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
+import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
 
 /**
  * @author Artur Vasilov
@@ -32,6 +38,12 @@ public class EventsHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.moreText)
     View mMoreText;
+
+    @BindView(R.id.notificationsBar)
+    View mNotificationsBar;
+
+    @BindView(R.id.notificationsSwitcher)
+    SwitchCompat mNotificationsSwitcher;
 
     private Event mEvent;
     private Context mContext;
@@ -66,6 +78,33 @@ public class EventsHolder extends RecyclerView.ViewHolder {
 
         itemView.setOnClickListener(view -> mListener.onEventClick(mEvent));
         mMoreText.setOnClickListener(view -> mListener.onEventClick(mEvent));
+        mNotificationsSwitcher.setOnClickListener(view -> {
+        });
+
+        if (!mEvent.isSubscriptionPossible()) {
+            mNotificationsBar.setVisibility(View.GONE);
+            return;
+        }
+
+        mNotificationsBar.setVisibility(View.VISIBLE);
+
+        RepositoryProvider.provideEventsRepository()
+                .subscriptionForEvent(mEvent)
+                .subscribe(
+                        eventSubscription -> mNotificationsSwitcher.setChecked(eventSubscription.isSubscribed()),
+                        throwable -> mNotificationsSwitcher.setChecked(false)
+                );
+
+        mNotificationsSwitcher.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            EventSubscription subscription = new EventSubscription(mEvent.getId(), isChecked);
+            RxSQLite.get().insert(EventSubscriptionsTable.TABLE, subscription)
+                    .compose(RxUtils.async())
+                    .subscribe(
+                            eventSubscription -> {
+                            },
+                            throwable -> mNotificationsSwitcher.setChecked(!isChecked)
+                    );
+        });
     }
 
     public interface EventsActionListener {

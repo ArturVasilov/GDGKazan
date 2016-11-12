@@ -14,6 +14,7 @@
     <string name="events.image_description.event_image">Логотип мероприятия</string>
     <string name="events.image_description.favourite_image">Добавить в избранное</string>
     <string name="events.more_button">ПОДРОБНЕЕ</string>
+    <string name="events.notifications_text">УВЕДОМЛЕНИЯ</string>
 
     <!-- EVENT -->
     <string name="event.description.title">Описание</string>
