@@ -19,31 +19,26 @@ public class Event implements Serializable, Comparable<Event> {
     @SerializedName("name")
     private String mName;
 
+    @SerializedName("preview_img")
+    private String mPreviewImage;
+
     @SerializedName("preview_description")
     private String mPreviewDescription;
 
     @SerializedName("description")
     private String mDescription;
 
-    @SerializedName("date_start")
-    private String mDateStart;
+    @SerializedName("subscription_possible")
+    private boolean mIsSubscriptionPossible;
 
-    @SerializedName("date_finish")
-    private String mDateFinish;
-
-    @SerializedName("status")
-    private EventStatus mStatus;
-
-    @SerializedName("preview_img")
-    private String mPreviewImage;
+    @SerializedName("is_pinned")
+    private boolean mIsPinned;
 
     @SerializedName("photos")
     private List<Photo> mPhotos;
 
     @SerializedName("links")
     private List<Link> mLinks;
-
-    private boolean mIsSubscribed;
 
     public int getId() {
         return mId;
@@ -60,6 +55,15 @@ public class Event implements Serializable, Comparable<Event> {
 
     public void setName(@NonNull String name) {
         mName = name;
+    }
+
+    @NonNull
+    public String getPreviewImage() {
+        return mPreviewImage;
+    }
+
+    public void setPreviewImage(@NonNull String previewImage) {
+        mPreviewImage = previewImage;
     }
 
     @NonNull
@@ -80,40 +84,20 @@ public class Event implements Serializable, Comparable<Event> {
         mDescription = description;
     }
 
-    @NonNull
-    public String getDateStart() {
-        return mDateStart;
+    public boolean isSubscriptionPossible() {
+        return mIsSubscriptionPossible;
     }
 
-    public void setDateStart(@NonNull String dateStart) {
-        mDateStart = dateStart;
+    public void setSubscriptionPossible(boolean subscriptionPossible) {
+        mIsSubscriptionPossible = subscriptionPossible;
     }
 
-    @NonNull
-    public String getDateFinish() {
-        return mDateFinish;
+    public boolean isPinned() {
+        return mIsPinned;
     }
 
-    public void setDateFinish(@NonNull String dateFinish) {
-        mDateFinish = dateFinish;
-    }
-
-    @NonNull
-    public EventStatus getStatus() {
-        return mStatus;
-    }
-
-    public void setStatus(@NonNull EventStatus status) {
-        mStatus = status;
-    }
-
-    @NonNull
-    public String getPreviewImage() {
-        return mPreviewImage;
-    }
-
-    public void setPreviewImage(@NonNull String previewImage) {
-        mPreviewImage = previewImage;
+    public void setPinned(boolean pinned) {
+        mIsPinned = pinned;
     }
 
     @NonNull
@@ -140,16 +124,14 @@ public class Event implements Serializable, Comparable<Event> {
         mLinks = links;
     }
 
-    public boolean isSubscribed() {
-        return mIsSubscribed;
-    }
-
-    public void setSubscribed(boolean subscribed) {
-        mIsSubscribed = subscribed;
-    }
-
     @Override
     public int compareTo(@NonNull Event event) {
-        return event.getId() - getId();
+        if (isPinned() == event.isPinned()) {
+            return event.getId() - getId();
+        }
+        if (isPinned() && !event.isPinned()) {
+            return -1;
+        }
+        return 1;
     }
 }

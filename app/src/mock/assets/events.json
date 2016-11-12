@@ -2,12 +2,11 @@
   {
     "id": 1,
     "name": "Study Jams",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
     "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
     "description": "GDG Kazan вместе с другими городами мира проводит бесплатные курсы Android StudyJams для всех желающих познакомиться с разработкой под Android.",
-    "date_start": "02.03.2016",
-    "date_finish": "19.04.2016",
-    "status": "FINISHED",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
+    "subscription_possible": false,
+    "is_pinned": false,
     "photos": [
       {
         "title": "",
@@ -39,39 +38,109 @@
   },
   {
     "id": 2,
-    "name": "Study Jams",
-    "preview_description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "date_start": "02.03.2016",
-    "date_finish": "19.04.2016",
-    "status": "FINISHED",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
+    "name": "Google I/O Extended",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawQXAwWllub2JFalE",
+    "preview_description": "Google I/O Extended \u2014 прямая трансляция с Google I/O 2016 и живое обсуждение всех самых интересных новинок от Google",
+    "description": "Google I/O Extended \u2014 уникальная возможность стать участником одного из самых крупных слётов любителей Google-технологий. Всё будет происходить в онлайн-режиме, так что вы сможете вместе с представителями GDG наблюдать за ежегодной презентацией самых крутых новинок в IT мире! Сейчас I/O Extended включает более 550 ивентов в 94 странах на 6 континентах и охватывает всю планету.<br><br>Вместе с миллионами других человек вы увидите Keynote, включающий обзор ключевых трендов конференции и прогноз новинок на грядущий год, поучаствуете в живом обсуждении новых технологий вместе с другими представителями коммьюнити, увидите как проходит I/O Extended в других сообществах GDG по всей планете.",
+    "subscription_possible": false,
+    "is_pinned": false,
     "photos": [
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
       },
       {
         "title": "",
-        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYWh6X3ZDNmpSeHM"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawN29YbkE0bHloQ0E"
       }
     ],
     "links": [
       {
-        "title": "",
-        "url": ""
+        "title": "Конференция Google I/O 2016",
+        "url": "https://events.google.com/io2016/"
+      },
+      {
+        "title": "Информация о Google I/O Extended 2016 на Habrahabr",
+        "url": "https://habrahabr.ru/company/google/blog/283442/"
+      },
+      {
+        "title": "Фотоотчет со I/O Extended 2016",
+        "url": "https://vk.com/album-119719934_231960222"
       }
     ]
   },
   {
     "id": 3,
-    "name": "Study Jams",
-    "preview_description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "date_start": "02.03.2016",
-    "date_finish": "19.04.2016",
-    "status": "FINISHED",
+    "name": "Android Meetup",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
+    "preview_description": "Митап по самым последним технологиям из мира Android-разработки",
+    "description": "Митап по самым последним технологиям из мира Android-разработки. Доклады посвящены новым возможностям Android N и платформе Firebase.",
+    "subscription_possible": false,
+    "is_pinned": false,
     "photos": [
       {
         "title": "",
@@ -92,12 +161,11 @@
   {
     "id": 4,
     "name": "Study Jams",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
     "preview_description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
     "description": "Study Jams - курсы для начинающих Android-разработчиков по всему миру",
-    "date_start": "02.03.2016",
-    "date_finish": "19.04.2016",
-    "status": "FINISHED",
-    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
+    "subscription_possible": false,
+    "is_pinned": false,
     "photos": [
       {
         "title": "",
@@ -117,13 +185,86 @@
   },
   {
     "id": 5,
-    "name": "Study Jams",
+    "name": "Школа Android-разработчиков",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
     "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
     "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
-    "date_start": "02.03.2016",
-    "date_finish": "19.04.2016",
-    "status": "FINISHED",
+    "subscription_possible": false,
+    "is_pinned": false,
+    "photos": [
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
+      }
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт курсов Study Jams",
+        "url": "http://developerstudyjams.com/"
+      },
+      {
+        "title": "Информация о курсах на Habrahabr",
+        "url": "https://habrahabr.ru/company/google/blog/277771/"
+      },
+      {
+        "title": "Фотоотчет со Study Jams",
+        "url": "https://vk.com/album-119719934_230943855"
+      },
+      {
+        "title": "Курс на Udacity для начинающих Android-разработчиков",
+        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "DevFest Kazan 2016",
     "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
+    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "subscription_possible": true,
+    "is_pinned": true,
+    "photos": [
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawTUtpSGNBWEN2c0E"
+      },
+      {
+        "title": "",
+        "url": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawemxXWDJ3Tl9hRWM"
+      }
+    ],
+    "links": [
+      {
+        "title": "Официальный сайт курсов Study Jams",
+        "url": "http://developerstudyjams.com/"
+      },
+      {
+        "title": "Информация о курсах на Habrahabr",
+        "url": "https://habrahabr.ru/company/google/blog/277771/"
+      },
+      {
+        "title": "Фотоотчет со Study Jams",
+        "url": "https://vk.com/album-119719934_230943855"
+      },
+      {
+        "title": "Курс на Udacity для начинающих Android-разработчиков",
+        "url": "https://www.udacity.com/course/android-development-for-beginners--ud837"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Machine Learning Meetup",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawcWE4MkFBY3ZYdFk",
+    "preview_description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "description": "Study Jams \u2014 курсы для начинающих Android-разработчиков по всему миру",
+    "subscription_possible": true,
+    "is_pinned": false,
     "photos": [
       {
         "title": "",
