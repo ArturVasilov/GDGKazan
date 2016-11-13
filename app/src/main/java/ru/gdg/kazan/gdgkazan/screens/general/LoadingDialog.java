@@ -1,20 +1,28 @@
 package ru.gdg.kazan.gdgkazan.screens.general;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.view.ContextThemeWrapper;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import butterknife.ButterKnife;
 import ru.gdg.kazan.gdgkazan.R;
 
 /**
@@ -44,8 +52,17 @@ public class LoadingDialog extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Context themeContext = new ContextThemeWrapper(getActivity(), R.style.AppTheme_LoadingDialog);
+        View view = View.inflate(themeContext, R.layout.dialog_loading, null);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            ProgressBar progressBar = ButterKnife.findById(view, R.id.progress);
+            @ColorInt int color = ContextCompat.getColor(getActivity(), R.color.colorProgressSemiTransparent);
+            progressBar.getIndeterminateDrawable().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
+        }
+
         return new AlertDialog.Builder(getActivity())
-                .setView(View.inflate(getActivity(), R.layout.dialog_loading, null))
+                .setView(view)
                 .create();
     }
 

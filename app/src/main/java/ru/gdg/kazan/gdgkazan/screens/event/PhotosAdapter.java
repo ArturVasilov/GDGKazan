@@ -7,12 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.Collections;
 import java.util.List;
 
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.PicassoTools;
 import ru.gdg.kazan.gdgkazan.models.Photo;
 
 /**
@@ -66,12 +65,7 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
         }
 
         public void bind(@NonNull Photo photo) {
-            Picasso.with(itemView.getContext())
-                    .load(photo.getUrl())
-                    .noFade()
-                    .placeholder(R.drawable.image_background_2)
-                    .error(R.drawable.image_background_2)
-                    .into(mPhoto);
+            PicassoTools.downloadOffline(photo.getUrl(), R.drawable.image_background_2, mPhoto);
             mPhoto.setContentDescription(photo.getTitle());
         }
     }

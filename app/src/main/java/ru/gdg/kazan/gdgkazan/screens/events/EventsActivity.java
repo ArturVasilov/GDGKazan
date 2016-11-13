@@ -35,7 +35,7 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
 
     private LoadingView mLoadingView;
 
-    private EventsAdapter mAdapter = new EventsAdapter(EventsActivity.this, EventsActivity.this);
+    private EventsAdapter mEventsAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,7 +57,8 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
 
     private void setupRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(mAdapter);
+        mEventsAdapter = new EventsAdapter(this);
+        mRecyclerView.setAdapter(mEventsAdapter);
     }
 
     @Override
@@ -72,7 +73,7 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
 
     @Override
     public void showEvents(@NonNull List<Event> events) {
-        mAdapter.changeDataSet(events);
+        mEventsAdapter.changeDataSet(events);
     }
 
     @Override

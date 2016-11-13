@@ -21,4 +21,7 @@
     <string name="event.links.title">Ссылки</string>
     <string name="event.links.bullet">\u2022\u00A0</string>
     <string name="event.photos.title">Фотографии</string>
+
+    <!-- IMAGES -->
+    <string name="images.title">%1$d из %2$d</string>
 </resources>

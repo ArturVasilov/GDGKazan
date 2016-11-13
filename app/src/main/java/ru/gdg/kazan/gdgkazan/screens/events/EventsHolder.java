@@ -1,6 +1,5 @@
 package ru.gdg.kazan.gdgkazan.screens.events;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
@@ -10,13 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.arturvasilov.rxloader.RxUtils;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.PicassoTools;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
@@ -46,35 +44,27 @@ public class EventsHolder extends RecyclerView.ViewHolder {
     SwitchCompat mNotificationsSwitcher;
 
     private Event mEvent;
-    private Context mContext;
 
     @NonNull
     private EventsActionListener mListener;
 
-    public EventsHolder(@NonNull View itemView, @NonNull Context context, @NonNull EventsActionListener listener) {
+    public EventsHolder(@NonNull View itemView, @NonNull EventsActionListener listener) {
         super(itemView);
-        mContext = context;
         mListener = listener;
         ButterKnife.bind(this, itemView);
     }
 
     @NonNull
-    public static EventsHolder buildForParent(@NonNull ViewGroup parent, @NonNull Context context,
-                                              @NonNull EventsActionListener listener) {
+    public static EventsHolder buildForParent(@NonNull ViewGroup parent, @NonNull EventsActionListener listener) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.li_event, parent, false);
-        return new EventsHolder(view, context, listener);
+        return new EventsHolder(view, listener);
     }
 
     public void bindView(@NonNull Event event) {
         mEvent = event;
 
-        Picasso.with(mContext)
-                .load(event.getPreviewImage())
-                .placeholder(R.drawable.image_background)
-                .error(R.drawable.image_background)
-                .noFade()
-                .into(mEventImage);
+        PicassoTools.downloadOffline(event.getPreviewImage(), R.drawable.image_background, mEventImage);
 
         mEventName.setText(mEvent.getName());
         mDescriptionText.setText(event.getPreviewDescription());

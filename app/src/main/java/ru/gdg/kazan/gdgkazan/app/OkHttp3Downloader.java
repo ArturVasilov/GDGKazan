@@ -1,4 +1,4 @@
-package ru.gdg.kazan.gdgkazan;
+package ru.gdg.kazan.gdgkazan.app;
 
 import android.content.Context;
 import android.net.Uri;

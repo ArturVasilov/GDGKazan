@@ -24,6 +24,7 @@ public class GDGKazanApp extends Application {
         super.onCreate();
         sAppContext = this;
 
+        //TODO : remove this stub
         SQLite.initialize(this);
         Config config = new Config();
         config.setKey(Config.EVENTS_URL);

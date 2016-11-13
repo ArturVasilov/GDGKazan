@@ -1,6 +1,5 @@
 package ru.gdg.kazan.gdgkazan.screens.events;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -18,19 +17,15 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsHolder> {
     private final List<Event> mEvents = new ArrayList<>();
 
     @NonNull
-    private Context mContext;
-
-    @NonNull
     private EventsHolder.EventsActionListener mListener;
 
-    public EventsAdapter(@NonNull Context context, @NonNull EventsHolder.EventsActionListener listener) {
-        mContext = context;
+    public EventsAdapter(@NonNull EventsHolder.EventsActionListener listener) {
         mListener = listener;
     }
 
     @Override
     public EventsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return EventsHolder.buildForParent(parent, mContext, mListener);
+        return EventsHolder.buildForParent(parent, mListener);
     }
 
     @Override

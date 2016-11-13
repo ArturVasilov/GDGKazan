@@ -8,12 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.PicassoTools;
 import ru.gdg.kazan.gdgkazan.models.Photo;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
@@ -60,16 +61,12 @@ public class ImageFragment extends Fragment {
         Picasso.with(getActivity())
                 .load(photo.getUrl())
                 .noFade()
-                .into(mPhotoView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        mAttacher.update();
-                    }
-
-                    @Override
-                    public void onError() {
-                        mAttacher.update();
-                    }
-                });
+                .networkPolicy(NetworkPolicy.OFFLINE)
+                .into(mPhotoView, new PicassoTools.PicassoCallback(mAttacher::update,
+                        () -> Picasso.with(getActivity())
+                                .load(photo.getUrl())
+                                .noFade()
+                                .into(mPhotoView, new PicassoTools.PicassoCallback(mAttacher::update, mAttacher::update)))
+                );
     }
 }

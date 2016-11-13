@@ -17,7 +17,7 @@
             android:layout_marginTop="?attr/actionBarSize"
             android:descendantFocusability="blocksDescendants"
             android:orientation="vertical"
-            android:paddingBottom="64dp"
+            android:paddingBottom="72dp"
             android:paddingTop="@dimen/padding_small">
 
             <TextView
