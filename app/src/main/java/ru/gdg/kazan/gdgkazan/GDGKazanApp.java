@@ -5,11 +5,9 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.jakewharton.picasso.OkHttp3Downloader;
-import com.squareup.picasso.Downloader;
-import com.squareup.picasso.Picasso;
-
 import ru.arturvasilov.sqlite.core.SQLite;
+import ru.gdg.kazan.gdgkazan.app.CacheDir;
+import ru.gdg.kazan.gdgkazan.app.PicassoTools;
 import ru.gdg.kazan.gdgkazan.models.Config;
 import ru.gdg.kazan.gdgkazan.models.database.ConfigTable;
 
@@ -32,13 +30,8 @@ public class GDGKazanApp extends Application {
         config.setValue("https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawYVBrM0xXTmI2SG8");
         SQLite.get().insert(ConfigTable.TABLE, config);
 
-        Downloader downloader = new OkHttp3Downloader(this);
-        Picasso picasso = new Picasso.Builder(this).downloader(downloader).build();
-        try {
-            Picasso.setSingletonInstance(picasso);
-        } catch (Exception ignored) {
-            //Picasso instance was already set
-        }
+        CacheDir.init(this);
+        PicassoTools.initPicasso(this);
     }
 
     @NonNull

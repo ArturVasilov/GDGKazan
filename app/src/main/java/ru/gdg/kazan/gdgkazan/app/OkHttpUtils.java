@@ -1,4 +1,4 @@
-package ru.gdg.kazan.gdgkazan.api;
+package ru.gdg.kazan.gdgkazan.app;
 
 import android.support.annotation.NonNull;
 
@@ -10,7 +10,6 @@ import java.io.InputStreamReader;
 import okhttp3.Request;
 import okhttp3.Response;
 import ru.gdg.kazan.gdgkazan.repository.OkHttpProvider;
-import rx.Observable;
 
 /**
  * @author Artur Vasilov

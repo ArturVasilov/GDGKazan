@@ -15,7 +15,7 @@ import ru.arturvasilov.rxloader.RxUtils;
 import ru.arturvasilov.sqlite.core.SQLite;
 import ru.arturvasilov.sqlite.core.Where;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
-import ru.gdg.kazan.gdgkazan.api.OkHttpUtils;
+import ru.gdg.kazan.gdgkazan.app.OkHttpUtils;
 import ru.gdg.kazan.gdgkazan.models.Config;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;

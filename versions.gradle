@@ -1,5 +1,4 @@
 ext {
     supportVersion = '25.0.0'
-    okhttpVersion = '3.4.1'
     butterKnifeVersion = '8.4.0'
 }

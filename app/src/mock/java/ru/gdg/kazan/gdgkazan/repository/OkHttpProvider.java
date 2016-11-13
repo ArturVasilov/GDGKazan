@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.logging.HttpLoggingInterceptor;
 import ru.gdg.kazan.gdgkazan.GDGKazanApp;
 
 /**
@@ -25,7 +24,6 @@ public final class OkHttpProvider {
     @NonNull
     public static OkHttpClient provideClient() {
         return new OkHttpClient.Builder()
-                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .addInterceptor(chain -> {
                     final Request request = chain.request();
                     try {
