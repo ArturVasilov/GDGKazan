@@ -3,6 +3,7 @@
           package="ru.gdg.kazan.gdgkazan">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".GDGKazanApp"
@@ -27,6 +28,10 @@
 
         <activity
             android:name=".screens.images.ImageActivity"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen"/>
+
+        <activity
+            android:name=".screens.images.ImagesPagerActivity"
             android:theme="@style/AppTheme.NoActionBar.Fullscreen"/>
 
         <provider

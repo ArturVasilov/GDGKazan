@@ -22,8 +22,19 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
 
     private final List<Photo> mPhotos;
 
-    public PhotosAdapter(@NonNull List<Photo> photos) {
+    private final OnPhotoActionListener mActionListener;
+
+    private final View.OnClickListener mInternalListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            int position = (int) view.getTag();
+            mActionListener.onPhotoClick(mPhotos, position);
+        }
+    };
+
+    public PhotosAdapter(@NonNull List<Photo> photos, @NonNull OnPhotoActionListener actionListener) {
         mPhotos = Collections.unmodifiableList(photos);
+        mActionListener = actionListener;
     }
 
     @NonNull
@@ -36,6 +47,8 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
     @Override
     public void onBindViewHolder(@NonNull PhotoHolder holder, int position) {
         holder.bind(mPhotos.get(position));
+        holder.itemView.setOnClickListener(mInternalListener);
+        holder.itemView.setTag(position);
     }
 
     @Override
@@ -61,6 +74,10 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
                     .into(mPhoto);
             mPhoto.setContentDescription(photo.getTitle());
         }
+    }
+
+    public interface OnPhotoActionListener {
+        void onPhotoClick(@NonNull List<Photo> photos, int selectedPosition);
     }
 
 }

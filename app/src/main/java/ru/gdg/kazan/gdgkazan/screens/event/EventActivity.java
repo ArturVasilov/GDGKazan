@@ -21,11 +21,12 @@ import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
 import ru.gdg.kazan.gdgkazan.models.Photo;
+import ru.gdg.kazan.gdgkazan.screens.images.ImagesPagerActivity;
 
 /**
  * @author Artur Vasilov
  */
-public class EventActivity extends AppCompatActivity implements EventView {
+public class EventActivity extends AppCompatActivity implements EventView, PhotosAdapter.OnPhotoActionListener {
 
     private static final String EVENT_KEY = "event";
 
@@ -101,7 +102,7 @@ public class EventActivity extends AppCompatActivity implements EventView {
 
     @Override
     public void showPhotos(@NonNull List<Photo> photos) {
-        PhotosAdapter adapter = new PhotosAdapter(photos);
+        PhotosAdapter adapter = new PhotosAdapter(photos, this);
         mPhotosRecyclerView.setAdapter(adapter);
     }
 
@@ -109,5 +110,10 @@ public class EventActivity extends AppCompatActivity implements EventView {
     public void hidePhotos() {
         mPhotosTitle.setVisibility(View.GONE);
         mPhotosRecyclerView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onPhotoClick(@NonNull List<Photo> photos, int selectedPosition) {
+        ImagesPagerActivity.start(this, photos, selectedPosition);
     }
 }
