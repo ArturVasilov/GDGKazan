@@ -16,9 +16,11 @@ import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.arturvasilov.rxloader.LoaderLifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
+import ru.gdg.kazan.gdgkazan.models.Photo;
 import ru.gdg.kazan.gdgkazan.screens.event.EventActivity;
 import ru.gdg.kazan.gdgkazan.screens.general.LoadingDialog;
 import ru.gdg.kazan.gdgkazan.screens.general.LoadingView;
+import ru.gdg.kazan.gdgkazan.screens.images.ImageActivity;
 
 /**
  * @author Artur Vasilov
@@ -76,5 +78,10 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     @Override
     public void onEventClick(@NonNull Event event) {
         EventActivity.start(this, event);
+    }
+
+    @Override
+    public void onImageClick(@NonNull Event event) {
+        ImageActivity.start(this, new Photo("", event.getPreviewImage()));
     }
 }

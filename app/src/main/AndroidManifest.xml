@@ -25,6 +25,10 @@
             android:name=".screens.event.EventActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
+        <activity
+            android:name=".screens.images.ImageActivity"
+            android:theme="@style/AppTheme.NoActionBar.Fullscreen"/>
+
         <provider
             android:name=".models.database.SQLiteProvider"
             android:authorities="ru.gdg.kazan.gdgkazan"

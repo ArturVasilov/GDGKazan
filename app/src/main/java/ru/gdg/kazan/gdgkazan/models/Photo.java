@@ -17,6 +17,11 @@ public class Photo implements Serializable {
     @SerializedName("url")
     private String mUrl;
 
+    public Photo(@NonNull String title, @NonNull String url) {
+        mTitle = title;
+        mUrl = url;
+    }
+
     @NonNull
     public String getTitle() {
         return mTitle;

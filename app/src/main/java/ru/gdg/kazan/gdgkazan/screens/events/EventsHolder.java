@@ -68,20 +68,27 @@ public class EventsHolder extends RecyclerView.ViewHolder {
 
     public void bindView(@NonNull Event event) {
         mEvent = event;
+
         Picasso.with(mContext)
                 .load(event.getPreviewImage())
                 .placeholder(R.drawable.image_background)
                 .error(R.drawable.image_background)
                 .noFade()
                 .into(mEventImage);
+
         mEventName.setText(mEvent.getName());
         mDescriptionText.setText(event.getPreviewDescription());
 
         itemView.setOnClickListener(view -> mListener.onEventClick(mEvent));
+        mEventImage.setOnClickListener(view -> mListener.onImageClick(mEvent));
         mMoreText.setOnClickListener(view -> mListener.onEventClick(mEvent));
         mNotificationsBar.setOnClickListener(view -> {
         });
 
+        bindNotificationsSwitcher();
+    }
+
+    private void bindNotificationsSwitcher() {
         if (!mEvent.isSubscriptionPossible()) {
             mNotificationsBar.setVisibility(View.GONE);
             return;
@@ -109,6 +116,9 @@ public class EventsHolder extends RecyclerView.ViewHolder {
     }
 
     public interface EventsActionListener {
+
         void onEventClick(@NonNull Event event);
+
+        void onImageClick(@NonNull Event event);
     }
 }

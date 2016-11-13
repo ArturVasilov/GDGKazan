@@ -26,4 +26,5 @@
     <dimen name="text.26">26sp</dimen>
 
     <dimen name="photo.preview_height">250dp</dimen>
+    <dimen name="photo.padding">16dp</dimen>
 </resources>
