@@ -12,10 +12,10 @@ import java.io.Serializable;
 public class Photo implements Serializable {
 
     @SerializedName("title")
-    private String mTitle;
+    private final String mTitle;
 
     @SerializedName("url")
-    private String mUrl;
+    private final String mUrl;
 
     public Photo(@NonNull String title, @NonNull String url) {
         mTitle = title;

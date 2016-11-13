@@ -17,7 +17,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsHolder> {
     private final List<Event> mEvents = new ArrayList<>();
 
     @NonNull
-    private EventsHolder.EventsActionListener mListener;
+    private final EventsHolder.EventsActionListener mListener;
 
     public EventsAdapter(@NonNull EventsHolder.EventsActionListener listener) {
         mListener = listener;

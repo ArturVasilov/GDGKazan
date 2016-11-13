@@ -9,7 +9,6 @@ import org.sqlite.database.sqlite.SQLiteDatabase;
 import ru.arturvasilov.sqlite.core.BaseTable;
 import ru.arturvasilov.sqlite.core.Table;
 import ru.arturvasilov.sqlite.utils.TableBuilder;
-import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 
 /**

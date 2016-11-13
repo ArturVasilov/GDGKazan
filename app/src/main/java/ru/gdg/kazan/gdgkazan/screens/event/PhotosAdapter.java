@@ -57,7 +57,7 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
 
     public static class PhotoHolder extends RecyclerView.ViewHolder {
 
-        private ImageView mPhoto;
+        private final ImageView mPhoto;
 
         public PhotoHolder(View itemView) {
             super(itemView);

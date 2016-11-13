@@ -6,6 +6,5 @@
            android:layout_marginLeft="@dimen/margin_xsmall"
            android:layout_marginRight="@dimen/margin_xsmall"
            android:adjustViewBounds="true"
-           android:background="@color/colorAccent"
            android:scaleType="centerCrop"
            tools:ignore="ContentDescription"/>

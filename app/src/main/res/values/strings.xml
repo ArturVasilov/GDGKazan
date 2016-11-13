@@ -1,15 +1,8 @@
 <resources>
     <string name="app_name">GDG Kazan</string>
 
-    <string name="error.network">Отсутствует подключение к сети.\nПроверьте соединение и повторите попытку</string>
-    <string name="error.unexpected">Не удалось получить данные. Повторите попытку позже</string>
-
-    <string name="button.cancel">Отмена</string>
-    <string name="confirm.open_link">Перейти по внешней ссылке?</string>
-    <string name="button.ok">ОК</string>
     <string name="loading">Загрузка…</string>
-
-
+    
     <!-- EVENTS -->
     <string name="events.image_description.event_image">Логотип мероприятия</string>
     <string name="events.image_description.favourite_image">Добавить в избранное</string>

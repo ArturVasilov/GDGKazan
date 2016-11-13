@@ -46,7 +46,7 @@ public class EventsHolder extends RecyclerView.ViewHolder {
     private Event mEvent;
 
     @NonNull
-    private EventsActionListener mListener;
+    private final EventsActionListener mListener;
 
     public EventsHolder(@NonNull View itemView, @NonNull EventsActionListener listener) {
         super(itemView);
