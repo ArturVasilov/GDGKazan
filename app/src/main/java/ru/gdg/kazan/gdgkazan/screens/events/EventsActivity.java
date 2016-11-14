@@ -1,5 +1,7 @@
 package ru.gdg.kazan.gdgkazan.screens.events;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -36,6 +38,10 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     private LoadingView mLoadingView;
 
     private EventsAdapter mEventsAdapter;
+
+    public static void start(@NonNull Activity activity) {
+        activity.startActivity(new Intent(activity, EventsActivity.class));
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

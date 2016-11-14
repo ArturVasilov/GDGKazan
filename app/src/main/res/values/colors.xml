@@ -3,9 +3,9 @@
     <color name="colorPrimary">#f44336</color>
     <color name="colorPrimaryDark">#d32f2f</color>
     <color name="colorAccent">#448AFF</color>
-    <color name="primary_text">#212121</color>
-    <color name="secondary_dark_text">#505050</color>
-    <color name="secondary_text">#727272</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryDarkText">#505050</color>
+    <color name="colorSecondaryText">#727272</color>
 
     <color name="colorProgress">#4CAF50</color>
     <color name="colorProgressSemiTransparent">#A84CAF50</color>

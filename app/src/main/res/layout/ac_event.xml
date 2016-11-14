@@ -28,7 +28,7 @@
                 android:layout_marginRight="@dimen/margin_medium"
                 android:fontFamily="sans-serif"
                 android:text="@string/event.description.title"
-                android:textColor="@color/primary_text"
+                android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/text.22"/>
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_marginTop="@dimen/margin_small"
                 android:fontFamily="sans-serif-light"
                 android:lineSpacingMultiplier="1.10"
-                android:textColor="@color/secondary_dark_text"
+                android:textColor="@color/colorSecondaryDarkText"
                 android:textSize="@dimen/text.16"/>
 
             <TextView
@@ -52,7 +52,7 @@
                 android:layout_marginTop="@dimen/margin_medium"
                 android:fontFamily="sans-serif"
                 android:text="@string/event.links.title"
-                android:textColor="@color/primary_text"
+                android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/text.22"/>
 
             <android.support.v7.widget.RecyclerView
@@ -72,7 +72,7 @@
                 android:layout_marginTop="@dimen/margin_medium"
                 android:fontFamily="sans-serif"
                 android:text="@string/event.photos.title"
-                android:textColor="@color/primary_text"
+                android:textColor="@color/colorPrimaryText"
                 android:textSize="@dimen/text.22"/>
 
             <android.support.v7.widget.RecyclerView

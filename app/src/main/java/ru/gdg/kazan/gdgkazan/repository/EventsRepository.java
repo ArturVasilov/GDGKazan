@@ -16,11 +16,10 @@ import ru.arturvasilov.sqlite.core.SQLite;
 import ru.arturvasilov.sqlite.core.Where;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.app.OkHttpUtils;
-import ru.gdg.kazan.gdgkazan.models.Config;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.GsonHolder;
-import ru.gdg.kazan.gdgkazan.models.database.ConfigTable;
+import ru.gdg.kazan.gdgkazan.models.config.RemoteConfig;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
 import ru.gdg.kazan.gdgkazan.models.database.EventsTable;
 import rx.Observable;
@@ -35,9 +34,8 @@ public class EventsRepository {
 
     @NonNull
     public Observable<List<Event>> fetchEvents() {
-        Where eventsUrlWhere = Where.create().equalTo(ConfigTable.KEY, Config.EVENTS_URL);
-        return RxSQLite.get().querySingle(ConfigTable.TABLE, eventsUrlWhere)
-                .map(Config::getValue)
+        String eventsUrl = RemoteConfig.getString(RemoteConfig.EVENTS_URL, "");
+        return Observable.just(eventsUrl)
                 .flatMap(url -> {
                     try {
                         return Observable.just(OkHttpUtils.downloadJson(url));
@@ -64,6 +62,11 @@ public class EventsRepository {
                     return events;
                 })
                 .compose(RxUtils.async());
+    }
+
+    @NonNull
+    public Observable<List<Event>> fetchLocalEvents() {
+        return RxSQLite.get().query(EventsTable.TABLE).compose(RxUtils.async());
     }
 
     @NonNull

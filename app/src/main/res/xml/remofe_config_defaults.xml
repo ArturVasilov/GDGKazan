@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+
+    <entry>
+        <key>colorPrimary</key>
+        <value>#f44336</value>
+    </entry>
+    <entry>
+        <key>colorPrimaryDark</key>
+        <value>#d32f2f</value>
+    </entry>
+    <entry>
+        <key>colorAccent</key>
+        <value>#448AFF</value>
+    </entry>
+    <entry>
+        <key>colorPrimaryText</key>
+        <value>#212121</value>
+    </entry>
+    <entry>
+        <key>colorSecondaryDarkText</key>
+        <value>#505050</value>
+    </entry>
+    <entry>
+        <key>colorSecondaryText</key>
+        <value>#727272</value>
+    </entry>
+    <entry>
+        <key>colorProgress</key>
+        <value>#4CAF50</value>
+    </entry>
+    <entry>
+        <key>colorProgressSemiTransparent</key>
+        <value>#A84CAF50</value>
+    </entry>
+    <entry>
+        <key>events_url</key>
+        <value>https://drive.google.com/uc?export=download&amp;id=0B0Z-lYDZWlawRHNlRUZTdmtuMlE</value>
+    </entry>
+
+</defaultsMap>

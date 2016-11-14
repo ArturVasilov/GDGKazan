@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "758674194889",
+    "firebase_url": "https://gdgkazan-e9d24.firebaseio.com",
+    "project_id": "gdgkazan-e9d24",
+    "storage_bucket": "gdgkazan-e9d24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758674194889:android:56b6986e44160212",
+        "android_client_info": {
+          "package_name": "ru.gdg.kazan.gdgkazan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758674194889-htnbpobgknlbei28bcvdqckfk26kt1ik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIs-S6k2H_EH9B5nZsRimN5LnuhYPHp8g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

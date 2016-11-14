@@ -21,7 +21,7 @@ public class EventsPresenter {
 
     public void init() {
         RepositoryProvider.provideEventsRepository()
-                .fetchEvents()
+                .fetchLocalEvents()
                 .doOnSubscribe(mView::showLoading)
                 .doOnTerminate(mView::hideLoading)
                 .compose(mLifecycleHandler.load(R.id.events_request))
