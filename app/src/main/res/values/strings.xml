@@ -2,10 +2,13 @@
     <string name="app_name">GDG Kazan</string>
 
     <string name="loading">Загрузка…</string>
+
+    <!-- AUTH -->
+    <string name="auth.error">Не\u00A0удалось подключиться к\u00A0сети. Проверьте настройки подключения и\u00A0повторите попытку.</string>
     
     <!-- EVENTS -->
     <string name="events.image_description.event_image">Логотип мероприятия</string>
-    <string name="events.image_description.favourite_image">Добавить в избранное</string>
+    <string name="events.image_description.favourite_image">Добавить в\u00A0избранное</string>
     <string name="events.more_button">ПОДРОБНЕЕ</string>
     <string name="events.notifications_text">УВЕДОМЛЕНИЯ</string>
 
@@ -17,4 +20,8 @@
 
     <!-- IMAGES -->
     <string name="images.title">%1$d из %2$d</string>
+
+    <!-- CONTENT DESCRIPTIONS -->
+    <string name="cd.refresh">Обновить</string>
+
 </resources>

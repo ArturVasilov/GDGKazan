@@ -19,7 +19,7 @@ import rx.Observable;
  */
 public class SplashPresenter {
 
-    private static final int SPLASH_DELAY_MS = 10800;
+    private static final int SPLASH_DELAY_MS = 1000;
 
     private final SplashView mView;
     private final LifecycleHandler mLifecycleHandler;
