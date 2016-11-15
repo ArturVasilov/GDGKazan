@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="photo.padding">64dp</dimen>
+
+    <dimen name="splash.logo_size">320dp</dimen>
 </resources>

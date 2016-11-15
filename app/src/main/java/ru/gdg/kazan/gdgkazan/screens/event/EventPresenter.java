@@ -16,7 +16,7 @@ public class EventPresenter {
 
     public EventPresenter(@NonNull EventView view, @NonNull Event event) {
         mView = view;
-        this.mEvent = event;
+        mEvent = event;
     }
 
     public void init() {

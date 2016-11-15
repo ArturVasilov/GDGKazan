@@ -80,6 +80,7 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
 
         Event event = (Event) getIntent().getSerializableExtra(EVENT_KEY);
         mPresenter = new EventPresenter(this, event);
+        mPresenter.init();
     }
 
     @Override
