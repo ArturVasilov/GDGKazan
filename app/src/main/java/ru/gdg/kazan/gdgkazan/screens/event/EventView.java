@@ -26,4 +26,6 @@ public interface EventView {
 
     void showPhotosPager(@NonNull List<Photo> photos, int selectedPosition);
 
+    void openLink(@NonNull String url);
+
 }

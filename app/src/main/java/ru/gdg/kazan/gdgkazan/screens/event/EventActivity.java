@@ -18,6 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.Env;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
 import ru.gdg.kazan.gdgkazan.models.Photo;
@@ -27,7 +28,8 @@ import ru.gdg.kazan.gdgkazan.screens.images.ImagesPagerActivity;
 /**
  * @author Artur Vasilov
  */
-public class EventActivity extends AppCompatActivity implements EventView, PhotosAdapter.OnPhotoActionListener {
+public class EventActivity extends AppCompatActivity implements EventView,
+        PhotosAdapter.OnPhotoActionListener, LinksAdapter.OnLinkActionListener {
 
     private static final String EVENT_KEY = "event";
 
@@ -97,7 +99,7 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
 
     @Override
     public void showLinks(@NonNull List<Link> links) {
-        LinksAdapter adapter = new LinksAdapter(links);
+        LinksAdapter adapter = new LinksAdapter(links, this);
         mLinksRecyclerView.setAdapter(adapter);
     }
 
@@ -127,5 +129,15 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
     @Override
     public void onPhotoClick(int selectedPosition) {
         mPresenter.onPhotoClick(selectedPosition);
+    }
+
+    @Override
+    public void onLinkClick(@NonNull Link link) {
+        mPresenter.onLinkClick(link);
+    }
+
+    @Override
+    public void openLink(@NonNull String url) {
+        Env.browseUrl(this, url);
     }
 }

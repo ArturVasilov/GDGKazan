@@ -1,35 +1,29 @@
 package ru.gdg.kazan.gdgkazan.screens.event;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.RelativeSizeSpan;
-import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.List;
 
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Link;
-import ru.gdg.kazan.gdgkazan.utils.HtmlCompat;
 
 /**
  * @author Artur Vasilov
  */
-public class LinksAdapter extends RecyclerView.Adapter<LinksAdapter.LinkHolder> {
+public class LinksAdapter extends RecyclerView.Adapter<LinkHolder> {
 
     private final List<Link> mLinks;
 
-    public LinksAdapter(@NonNull List<Link> links) {
+    private final OnLinkActionListener mActionListener;
+
+    public LinksAdapter(@NonNull List<Link> links, @NonNull OnLinkActionListener actionListener) {
         mLinks = Collections.unmodifiableList(links);
+        mActionListener = actionListener;
     }
 
     @NonNull
@@ -41,7 +35,7 @@ public class LinksAdapter extends RecyclerView.Adapter<LinksAdapter.LinkHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull LinkHolder holder, int position) {
-        holder.bind(mLinks.get(position));
+        holder.bind(mLinks.get(position), mActionListener);
     }
 
     @Override
@@ -49,29 +43,8 @@ public class LinksAdapter extends RecyclerView.Adapter<LinksAdapter.LinkHolder> 
         return mLinks.size();
     }
 
-    public static class LinkHolder extends RecyclerView.ViewHolder {
-
-        private static final String LINK_FORMAT = "<a href=\"%1$s\">%2$s</a>";
-
-        private final TextView mLinkTextView;
-
-        public LinkHolder(View itemView) {
-            super(itemView);
-            mLinkTextView = (TextView) itemView;
-            mLinkTextView.setMovementMethod(LinkMovementMethod.getInstance());
-        }
-
-        public void bind(@NonNull Link link) {
-            CharSequence bullet = itemView.getContext().getString(R.string.event_links_bullet);
-            SpannableString bulletSpannable = new SpannableString(bullet);
-            bulletSpannable.setSpan(new StyleSpan(Typeface.BOLD), 0, 1, 0);
-            bulletSpannable.setSpan(new RelativeSizeSpan(1.5f), 0, 1, 0);
-            bulletSpannable.setSpan(new ForegroundColorSpan(Color.BLACK), 0, 1, 0);
-            mLinkTextView.setText(bulletSpannable);
-
-            String textWithLink = String.format(LINK_FORMAT, link.getUrl(), link.getTitle());
-            mLinkTextView.append(HtmlCompat.fromHtml(textWithLink));
-        }
+    public interface OnLinkActionListener {
+        void onLinkClick(@NonNull Link link);
     }
 
 }
