@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
 
 /**
@@ -19,10 +20,21 @@ public class EventsPresenter {
         mLifecycleHandler = lifecycleHandler;
     }
 
-    public void init() {
+    public void init(int showEventId) {
         RepositoryProvider.provideEventsRepository()
                 .fetchLocalEvents()
                 .compose(mLifecycleHandler.load(R.id.events_request))
-                .subscribe(mView::showEvents, throwable -> {});
+                .subscribe(events -> {
+                    mView.showEvents(events);
+                    if (showEventId >= 0) {
+                        for (Event event : events) {
+                            if (event.getId() == showEventId) {
+                                mView.showEventScreen(event);
+                                break;
+                            }
+                        }
+                    }
+                }, throwable -> {
+                });
     }
 }

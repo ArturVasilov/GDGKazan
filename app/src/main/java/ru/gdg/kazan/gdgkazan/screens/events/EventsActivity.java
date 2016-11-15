@@ -22,6 +22,7 @@ import ru.gdg.kazan.gdgkazan.models.Photo;
 import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.event.EventActivity;
 import ru.gdg.kazan.gdgkazan.screens.images.ImageActivity;
+import ru.gdg.kazan.gdgkazan.service.FCMService;
 
 /**
  * @author Artur Vasilov
@@ -40,6 +41,12 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
         activity.startActivity(new Intent(activity, EventsActivity.class));
     }
 
+    public static void startEventPush(@NonNull Activity activity, int eventId) {
+        Intent intent = new Intent(activity, EventsActivity.class);
+        intent.putExtra(FCMService.EVENT_ID_PUSH_KEY, eventId);
+        activity.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +63,11 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
         setupRecyclerView();
 
         EventsPresenter presenter = new EventsPresenter(this, lifecycleHandler);
-        presenter.init();
+        int eventId = -1;
+        if (getIntent() != null && getIntent().hasExtra(FCMService.EVENT_ID_PUSH_KEY)) {
+            eventId = getIntent().getIntExtra(FCMService.EVENT_ID_PUSH_KEY, -1);
+        }
+        presenter.init(eventId);
     }
 
     private void setupRecyclerView() {
@@ -68,6 +79,11 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     @Override
     public void showEvents(@NonNull List<Event> events) {
         mEventsAdapter.changeDataSet(events);
+    }
+
+    @Override
+    public void showEventScreen(@NonNull Event event) {
+        EventActivity.start(this, event);
     }
 
     @Override

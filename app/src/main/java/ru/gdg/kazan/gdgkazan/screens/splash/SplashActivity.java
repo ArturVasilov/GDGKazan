@@ -13,6 +13,7 @@ import ru.arturvasilov.rxloader.LoaderLifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.events.EventsActivity;
+import ru.gdg.kazan.gdgkazan.service.FCMService;
 
 /**
  * @author Artur Vasilov
@@ -33,6 +34,14 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
         setContentView(R.layout.ac_splash);
         if (savedInstanceState == null) {
             Analytics.logSplashScreenStarted();
+            boolean showFromPush = getIntent().getBooleanExtra(FCMService.SHOW_FROM_PUSH_KEY, false);
+            if (showFromPush) {
+                int eventId = getIntent().getIntExtra(FCMService.EVENT_ID_PUSH_KEY, 0);
+                int notificationId = getIntent().getIntExtra(FCMService.NOTIFICATION_ID_KEY, 0);
+                if (eventId >= 0 && notificationId >= 0) {
+                    Analytics.logNotificationClicked(eventId, notificationId);
+                }
+            }
         }
         ButterKnife.bind(this);
 
@@ -55,7 +64,11 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
 
     @Override
     public void showEvents() {
-        EventsActivity.start(this);
+        if (getIntent() != null && getIntent().hasExtra(FCMService.EVENT_ID_PUSH_KEY)) {
+            EventsActivity.startEventPush(this, getIntent().getIntExtra(FCMService.EVENT_ID_PUSH_KEY, -1));
+        } else {
+            EventsActivity.start(this);
+        }
         supportFinishAfterTransition();
     }
 

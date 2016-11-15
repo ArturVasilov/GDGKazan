@@ -101,6 +101,10 @@ public final class Analytics {
 
     //region NOTIFICATIONS
 
+    public static void logTokenRefreshed() {
+        // Do nothing
+    }
+
     public static void logNotificationReceived(int eventId, int notificationId) {
         // Do nothing
     }

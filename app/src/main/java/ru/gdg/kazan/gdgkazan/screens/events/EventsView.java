@@ -12,4 +12,6 @@ import ru.gdg.kazan.gdgkazan.models.Event;
 public interface EventsView {
 
     void showEvents(@NonNull List<Event> events);
+
+    void showEventScreen(@NonNull Event event);
 }
