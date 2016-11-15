@@ -5,7 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.orhanobut.hawk.Hawk;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import ru.arturvasilov.sqlite.core.SQLite;
 import ru.gdg.kazan.gdgkazan.app.CacheDir;
@@ -28,7 +29,12 @@ public class GDGKazanApp extends Application {
         CacheDir.init(this);
         PicassoTools.initPicasso(this);
 
-        Hawk.init(this).build();
+        FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setDeveloperModeEnabled(BuildConfig.DEBUG)
+                .build();
+        remoteConfig.setConfigSettings(configSettings);
+        remoteConfig.setDefaults(R.xml.remofe_config_defaults);
     }
 
     @NonNull

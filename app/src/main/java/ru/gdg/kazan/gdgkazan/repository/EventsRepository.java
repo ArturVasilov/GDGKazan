@@ -15,13 +15,14 @@ import ru.arturvasilov.rxloader.RxUtils;
 import ru.arturvasilov.sqlite.core.SQLite;
 import ru.arturvasilov.sqlite.core.Where;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
+import ru.arturvasilov.sqlite.utils.SQLiteUtils;
 import ru.gdg.kazan.gdgkazan.app.OkHttpUtils;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.GsonHolder;
-import ru.gdg.kazan.gdgkazan.models.config.RemoteConfig;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
 import ru.gdg.kazan.gdgkazan.models.database.EventsTable;
+import ru.gdg.kazan.gdgkazan.repository.preferences.KeyValueStorage;
 import rx.Observable;
 
 /**
@@ -29,12 +30,9 @@ import rx.Observable;
  */
 public class EventsRepository {
 
-    public EventsRepository() {
-    }
-
     @NonNull
     public Observable<List<Event>> fetchEvents() {
-        String eventsUrl = RemoteConfig.getString(RemoteConfig.EVENTS_URL, "");
+        String eventsUrl = RepositoryProvider.provideKeyValueStorage().getString(KeyValueStorage.EVENTS_URL);
         return Observable.just(eventsUrl)
                 .flatMap(url -> {
                     try {
@@ -56,7 +54,12 @@ public class EventsRepository {
                     SQLite.get().delete(EventsTable.TABLE);
                     SQLite.get().insert(EventsTable.TABLE, events);
                 })
-                .onErrorResumeNext(throwable -> RxSQLite.get().query(EventsTable.TABLE))
+                .compose(RxUtils.async());
+    }
+
+    @NonNull
+    public Observable<List<Event>> fetchLocalEvents() {
+        return RxSQLite.get().query(EventsTable.TABLE)
                 .map(events -> {
                     Collections.sort(events);
                     return events;
@@ -64,9 +67,8 @@ public class EventsRepository {
                 .compose(RxUtils.async());
     }
 
-    @NonNull
-    public Observable<List<Event>> fetchLocalEvents() {
-        return RxSQLite.get().query(EventsTable.TABLE).compose(RxUtils.async());
+    public boolean hasLocalEvents() {
+        return !SQLiteUtils.isTableEmpty(EventsTable.TABLE);
     }
 
     @NonNull
