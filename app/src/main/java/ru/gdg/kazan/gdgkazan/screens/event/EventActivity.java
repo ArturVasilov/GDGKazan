@@ -21,6 +21,7 @@ import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
 import ru.gdg.kazan.gdgkazan.models.Photo;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.images.ImagesPagerActivity;
 
 /**
@@ -51,6 +52,8 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
     @BindView(R.id.photosRecyclerView)
     RecyclerView mPhotosRecyclerView;
 
+    private EventPresenter mPresenter;
+
     public static void start(@NonNull Activity activity, @NonNull Event event) {
         Intent intent = new Intent(activity, EventActivity.class);
         intent.putExtra(EVENT_KEY, event);
@@ -61,6 +64,10 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_event);
+        if (savedInstanceState == null) {
+            Analytics.logEventScreenStarted();
+        }
+
         ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);
@@ -72,8 +79,7 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
         mPhotosRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         Event event = (Event) getIntent().getSerializableExtra(EVENT_KEY);
-        EventPresenter presenter = new EventPresenter(this);
-        presenter.init(event);
+        mPresenter = new EventPresenter(this, event);
     }
 
     @Override
@@ -113,7 +119,12 @@ public class EventActivity extends AppCompatActivity implements EventView, Photo
     }
 
     @Override
-    public void onPhotoClick(@NonNull List<Photo> photos, int selectedPosition) {
+    public void showPhotosPager(@NonNull List<Photo> photos, int selectedPosition) {
         ImagesPagerActivity.start(this, photos, selectedPosition);
+    }
+
+    @Override
+    public void onPhotoClick(int selectedPosition) {
+        mPresenter.onPhotoClick(selectedPosition);
     }
 }

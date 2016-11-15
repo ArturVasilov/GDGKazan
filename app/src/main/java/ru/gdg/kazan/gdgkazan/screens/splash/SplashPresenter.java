@@ -9,6 +9,7 @@ import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.repository.EventsRepository;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.repository.preferences.KeyValueStorage;
 import ru.gdg.kazan.gdgkazan.utils.TextUtils;
 import rx.Observable;
@@ -35,6 +36,8 @@ public class SplashPresenter {
     }
 
     public void reload() {
+        Analytics.logRestartSplash(mIsConfigSuccess.get());
+
         if (!mIsConfigSuccess.get()) {
             RepositoryProvider.provideEventsRepository()
                     .fetchEvents()
@@ -60,15 +63,22 @@ public class SplashPresenter {
                 .config()
                 .take(1)
                 .flatMap(o -> {
+                    Analytics.logConfigSuccess();
                     mIsConfigSuccess.set(true);
+
                     String newUrl = keyValueStorage.getString(KeyValueStorage.EVENTS_URL);
                     if (TextUtils.equals(newUrl, beforeUrl) && eventsRepository.hasLocalEvents()) {
+                        Analytics.logLocalSplashAuth();
                         return Observable.just(o);
                     }
+                    Analytics.logLoadingEvents();
                     return eventsRepository.fetchEvents();
                 })
                 .zipWith(Observable.just(1).delay(SPLASH_DELAY_MS, TimeUnit.MILLISECONDS), (o, integer) -> o)
                 .compose(lifecycle)
-                .subscribe(o -> mView.showEvents(), throwable -> mView.showError());
+                .subscribe(o -> mView.showEvents(), throwable -> {
+                    Analytics.logSplashFailed(mIsConfigSuccess.get(), throwable);
+                    mView.showError();
+                });
     }
 }

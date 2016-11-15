@@ -19,6 +19,7 @@ import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov
@@ -69,9 +70,21 @@ public class EventsHolder extends RecyclerView.ViewHolder {
         mEventName.setText(mEvent.getName());
         mDescriptionText.setText(event.getPreviewDescription());
 
-        itemView.setOnClickListener(view -> mListener.onEventClick(mEvent));
-        mEventImage.setOnClickListener(view -> mListener.onImageClick(mEvent));
-        mMoreText.setOnClickListener(view -> mListener.onEventClick(mEvent));
+        itemView.setOnClickListener(view -> {
+            Analytics.logEventCardClick(mEvent);
+            mListener.onEventClick(mEvent);
+        });
+
+        mEventImage.setOnClickListener(view -> {
+            Analytics.logEventLogoClick(mEvent);
+            mListener.onImageClick(mEvent);
+        });
+
+        mMoreText.setOnClickListener(view -> {
+            Analytics.logEventMoreButtonClick(mEvent);
+            mListener.onEventClick(mEvent);
+        });
+
         mNotificationsBar.setOnClickListener(view -> {
         });
 
@@ -94,6 +107,12 @@ public class EventsHolder extends RecyclerView.ViewHolder {
                 );
 
         mNotificationsSwitcher.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if (isChecked) {
+                Analytics.logEventNotificationsSwitcherEnabled(mEvent);
+            } else {
+                Analytics.logEventNotificationsSwitcherDisabled(mEvent);
+            }
+
             EventSubscription subscription = new EventSubscription(mEvent.getId(), isChecked);
             RxSQLite.get().insert(EventSubscriptionsTable.TABLE, subscription)
                     .compose(RxUtils.async())

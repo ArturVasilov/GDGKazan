@@ -3,6 +3,7 @@ package ru.gdg.kazan.gdgkazan.screens.event;
 import android.support.annotation.NonNull;
 
 import ru.gdg.kazan.gdgkazan.models.Event;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov
@@ -11,24 +12,32 @@ public class EventPresenter {
 
     private final EventView mView;
 
-    public EventPresenter(@NonNull EventView view) {
+    private final Event mEvent;
+
+    public EventPresenter(@NonNull EventView view, @NonNull Event event) {
         mView = view;
+        this.mEvent = event;
     }
 
-    public void init(@NonNull Event event) {
-        mView.showTitle(event.getName());
-        mView.showDescription(event.getDescription());
+    public void init() {
+        mView.showTitle(mEvent.getName());
+        mView.showDescription(mEvent.getDescription());
 
-        if (event.getLinks().isEmpty()) {
+        if (mEvent.getLinks().isEmpty()) {
             mView.hideLinks();
         } else {
-            mView.showLinks(event.getLinks());
+            mView.showLinks(mEvent.getLinks());
         }
 
-        if (event.getPhotos().isEmpty()) {
+        if (mEvent.getPhotos().isEmpty()) {
             mView.hidePhotos();
         } else {
-            mView.showPhotos(event.getPhotos());
+            mView.showPhotos(mEvent.getPhotos());
         }
+    }
+
+    public void onPhotoClick(int selectedPosition) {
+        Analytics.logEventPhotoClicked(mEvent, selectedPosition);
+        mView.showPhotosPager(mEvent.getPhotos(), selectedPosition);
     }
 }

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.arturvasilov.rxloader.LoaderLifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.events.EventsActivity;
 
 /**
@@ -20,6 +21,9 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_splash);
+        if (savedInstanceState == null) {
+            Analytics.logSplashScreenStarted();
+        }
 
         LifecycleHandler lifecycleHandler = LoaderLifecycleHandler.create(this, getSupportLoaderManager());
         mPresenter = new SplashPresenter(this, lifecycleHandler);

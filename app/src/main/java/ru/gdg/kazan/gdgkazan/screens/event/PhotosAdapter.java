@@ -27,7 +27,7 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
         @Override
         public void onClick(View view) {
             int position = (int) view.getTag();
-            mActionListener.onPhotoClick(mPhotos, position);
+            mActionListener.onPhotoClick(position);
         }
     };
 
@@ -71,7 +71,7 @@ public class PhotosAdapter extends RecyclerView.Adapter<PhotosAdapter.PhotoHolde
     }
 
     public interface OnPhotoActionListener {
-        void onPhotoClick(@NonNull List<Photo> photos, int selectedPosition);
+        void onPhotoClick(int selectedPosition);
     }
 
 }

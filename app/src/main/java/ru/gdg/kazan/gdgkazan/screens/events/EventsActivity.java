@@ -19,9 +19,8 @@ import ru.arturvasilov.rxloader.LoaderLifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Photo;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.event.EventActivity;
-import ru.gdg.kazan.gdgkazan.screens.general.LoadingDialog;
-import ru.gdg.kazan.gdgkazan.screens.general.LoadingView;
 import ru.gdg.kazan.gdgkazan.screens.images.ImageActivity;
 
 /**
@@ -35,8 +34,6 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     @BindView(R.id.eventsRecyclerView)
     RecyclerView mRecyclerView;
 
-    private LoadingView mLoadingView;
-
     private EventsAdapter mEventsAdapter;
 
     public static void start(@NonNull Activity activity) {
@@ -47,11 +44,12 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_events);
+        if (savedInstanceState == null) {
+            Analytics.logEventsScreenStarted();
+        }
         ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);
-
-        mLoadingView = LoadingDialog.view(getSupportFragmentManager());
 
         LifecycleHandler lifecycleHandler = LoaderLifecycleHandler.create(this, getSupportLoaderManager());
 
@@ -65,16 +63,6 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mEventsAdapter = new EventsAdapter(this);
         mRecyclerView.setAdapter(mEventsAdapter);
-    }
-
-    @Override
-    public void showLoading() {
-        mLoadingView.showLoading();
-    }
-
-    @Override
-    public void hideLoading() {
-        mLoadingView.hideLoading();
     }
 
     @Override

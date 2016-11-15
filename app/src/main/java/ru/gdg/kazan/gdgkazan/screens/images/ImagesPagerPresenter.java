@@ -9,6 +9,7 @@ import java.util.List;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.app.StringResourcesHandler;
 import ru.gdg.kazan.gdgkazan.models.Photo;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov
@@ -38,6 +39,7 @@ public class ImagesPagerPresenter {
     }
 
     public void onPageSelected(int position) {
+        Analytics.logPhotoScrolled(position, mPhotos.size());
         showTitle(position);
     }
 

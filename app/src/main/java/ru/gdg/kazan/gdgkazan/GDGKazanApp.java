@@ -11,6 +11,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import ru.arturvasilov.sqlite.core.SQLite;
 import ru.gdg.kazan.gdgkazan.app.CacheDir;
 import ru.gdg.kazan.gdgkazan.app.PicassoTools;
+import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov
@@ -28,6 +29,8 @@ public class GDGKazanApp extends Application {
         SQLite.initialize(this);
         CacheDir.init(this);
         PicassoTools.initPicasso(this);
+
+        Analytics.init(this);
 
         FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()

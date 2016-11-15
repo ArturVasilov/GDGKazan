@@ -24,4 +24,6 @@ public interface EventView {
 
     void hidePhotos();
 
+    void showPhotosPager(@NonNull List<Photo> photos, int selectedPosition);
+
 }
