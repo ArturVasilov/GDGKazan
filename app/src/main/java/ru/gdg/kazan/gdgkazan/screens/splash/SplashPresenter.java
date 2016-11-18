@@ -7,9 +7,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.repository.EventsRepository;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.repository.preferences.KeyValueStorage;
 import ru.gdg.kazan.gdgkazan.utils.TextUtils;
 import rx.Observable;

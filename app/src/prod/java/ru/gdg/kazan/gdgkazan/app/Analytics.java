@@ -1,7 +1,13 @@
-package ru.gdg.kazan.gdgkazan.repository.app;
+package ru.gdg.kazan.gdgkazan.app;
+
+/**
+ * @author Artur Vasilov
+ */
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
@@ -12,16 +18,19 @@ import ru.gdg.kazan.gdgkazan.models.Link;
 @SuppressWarnings("UnusedParameters")
 public final class Analytics {
 
+    private static FirebaseAnalytics sFirebaseAnalytics;
+
     private Analytics() {
     }
 
     public static void init(@NonNull Context context) {
-        // Do nothing
+        sFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
     }
 
     //region SPLASH
 
     public static void logSplashScreenStarted() {
+
         // Do nothing
     }
 

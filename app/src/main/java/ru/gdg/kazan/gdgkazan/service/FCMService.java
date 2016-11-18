@@ -15,8 +15,8 @@ import ru.arturvasilov.rxloader.RxUtils;
 import ru.arturvasilov.sqlite.core.Where;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.splash.SplashActivity;
 
 /**

@@ -14,12 +14,12 @@ import butterknife.ButterKnife;
 import ru.arturvasilov.rxloader.RxUtils;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.app.PicassoTools;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov

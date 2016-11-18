@@ -2,9 +2,9 @@ package ru.gdg.kazan.gdgkazan.screens.event;
 
 import android.support.annotation.NonNull;
 
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov

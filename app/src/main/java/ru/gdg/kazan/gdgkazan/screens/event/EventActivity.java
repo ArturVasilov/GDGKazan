@@ -18,11 +18,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.app.Env;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
 import ru.gdg.kazan.gdgkazan.models.Photo;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.images.ImagesPagerActivity;
 
 /**

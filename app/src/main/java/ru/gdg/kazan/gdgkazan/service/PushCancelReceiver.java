@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 
 /**
  * @author Artur Vasilov

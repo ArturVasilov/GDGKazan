@@ -2,7 +2,7 @@ package ru.gdg.kazan.gdgkazan.service;
 
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 
 /**
  * @author Artur Vasilov

@@ -7,9 +7,9 @@ import android.support.annotation.Nullable;
 import java.util.List;
 
 import ru.gdg.kazan.gdgkazan.R;
+import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.app.StringResourcesHandler;
 import ru.gdg.kazan.gdgkazan.models.Photo;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
 
 /**
  * @author Artur Vasilov

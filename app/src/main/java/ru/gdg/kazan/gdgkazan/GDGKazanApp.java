@@ -5,14 +5,6 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
-
-import ru.arturvasilov.sqlite.core.SQLite;
-import ru.gdg.kazan.gdgkazan.app.CacheDir;
-import ru.gdg.kazan.gdgkazan.app.PicassoTools;
-import ru.gdg.kazan.gdgkazan.repository.app.Analytics;
-
 /**
  * @author Artur Vasilov
  */
@@ -25,19 +17,6 @@ public class GDGKazanApp extends Application {
     public void onCreate() {
         super.onCreate();
         sAppContext = this;
-
-        SQLite.initialize(this);
-        CacheDir.init(this);
-        PicassoTools.initPicasso(this);
-
-        Analytics.init(this);
-
-        FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
-        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
-                .setDeveloperModeEnabled(BuildConfig.DEBUG)
-                .build();
-        remoteConfig.setConfigSettings(configSettings);
-        remoteConfig.setDefaults(R.xml.remofe_config_defaults);
     }
 
     @NonNull
