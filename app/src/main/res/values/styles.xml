@@ -1,31 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:background">@null</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.NoActionBar.Fullscreen" parent="AppTheme.NoActionBar">
+    <style name="AppTheme.Red">
+        <item name="colorPrimary">@color/redThemeColorPrimary</item>
+        <item name="colorPrimaryDark">@color/redThemeColorPrimaryDark</item>
+        <item name="colorAccent">@color/redThemeColorAccent</item>
+    </style>
+
+    <style name="AppTheme.Green">
+        <item name="colorPrimary">@color/greenThemeColorPrimary</item>
+        <item name="colorPrimaryDark">@color/greenThemeColorPrimaryDark</item>
+        <item name="colorAccent">@color/greenThemeColorAccent</item>
+    </style>
+
+    <style name="AppTheme.Blue">
+        <item name="colorPrimary">@color/blueThemeColorPrimary</item>
+        <item name="colorPrimaryDark">@color/blueThemeColorPrimaryDark</item>
+        <item name="colorAccent">@color/blueThemeColorAccent</item>
+    </style>
+
+    <style name="AppTheme.Fullscreen" parent="AppTheme">
         <item name="android:windowTranslucentStatus" tools:ignore="NewApi">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-
-    <style name="AppTheme.LoadingDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:background">@android:color/white</item>
-        <item name="colorAccent">@color/colorProgress</item>
-        <item name="android:textColorPrimary">@color/colorSecondaryText</item>
-    </style>
 
 </resources>

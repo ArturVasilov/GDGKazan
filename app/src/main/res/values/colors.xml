@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#f44336</color>
-    <color name="colorPrimaryDark">#d32f2f</color>
-    <color name="colorAccent">#448AFF</color>
+    <color name="redThemeColorPrimary">#f44336</color>
+    <color name="redThemeColorPrimaryDark">#d32f2f</color>
+    <color name="redThemeColorAccent">#448AFF</color>
+
+    <color name="greenThemeColorPrimary">#4CAF50</color>
+    <color name="greenThemeColorPrimaryDark">#388E3C</color>
+    <color name="greenThemeColorAccent">#FF5252</color>
+
+    <color name="blueThemeColorPrimary">#2196F3</color>
+    <color name="blueThemeColorPrimaryDark">#1976D2</color>
+    <color name="blueThemeColorAccent">#4CAF50</color>
+
     <color name="colorPrimaryText">#212121</color>
     <color name="colorSecondaryDarkText">#505050</color>
     <color name="colorSecondaryText">#727272</color>
-
-    <color name="colorProgress">#4CAF50</color>
-    <color name="colorProgressSemiTransparent">#A84CAF50</color>
 </resources>

@@ -14,6 +14,7 @@ import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.screens.events.EventsActivity;
 import ru.gdg.kazan.gdgkazan.service.FCMService;
+import ru.gdg.kazan.gdgkazan.utils.ThemeUtils;
 
 /**
  * @author Artur Vasilov
@@ -31,6 +32,7 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(ThemeUtils.obtainThemeFromConfig());
         setContentView(R.layout.ac_splash);
 
         if (savedInstanceState == null) {

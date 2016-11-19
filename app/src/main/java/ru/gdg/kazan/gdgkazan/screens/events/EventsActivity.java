@@ -23,6 +23,7 @@ import ru.gdg.kazan.gdgkazan.models.Photo;
 import ru.gdg.kazan.gdgkazan.screens.event.EventActivity;
 import ru.gdg.kazan.gdgkazan.screens.images.ImageActivity;
 import ru.gdg.kazan.gdgkazan.service.FCMService;
+import ru.gdg.kazan.gdgkazan.utils.ThemeUtils;
 
 /**
  * @author Artur Vasilov
@@ -50,6 +51,7 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(ThemeUtils.obtainThemeFromConfig());
         setContentView(R.layout.ac_events);
         if (savedInstanceState == null) {
             Analytics.logEventsScreenStarted();

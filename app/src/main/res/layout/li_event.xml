@@ -66,7 +66,6 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical|start"
                 android:text="@string/events.more_button"
-                android:textColor="@color/colorAccent"
                 android:textSize="@dimen/text.16"/>
 
             <ImageView
@@ -87,13 +86,13 @@
             android:paddingRight="@dimen/padding_medium">
 
             <TextView
+                android:id="@+id/notificationsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:fontFamily="sans-serif"
                 android:gravity="center_vertical|start"
                 android:text="@string/events.notifications_text"
-                android:textColor="@color/colorAccent"
                 android:textSize="@dimen/text.16"/>
 
             <android.support.v7.widget.SwitchCompat

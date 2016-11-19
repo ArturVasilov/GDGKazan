@@ -2,12 +2,8 @@
 <defaultsMap>
 
     <entry>
-        <key>colorPrimary</key>
-        <value>#f44336</value>
-    </entry>
-    <entry>
-        <key>colorProgressSemiTransparent</key>
-        <value>#A84CAF50</value>
+        <key>theme</key>
+        <value>red_theme</value>
     </entry>
     <entry>
         <key>events_url</key>

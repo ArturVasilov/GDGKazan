@@ -18,7 +18,7 @@
 
         <activity
             android:name=".screens.splash.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.Red">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -27,19 +27,19 @@
 
         <activity
             android:name=".screens.events.EventsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.Red"/>
 
         <activity
             android:name=".screens.event.EventActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.Red"/>
 
         <activity
             android:name=".screens.images.ImageActivity"
-            android:theme="@style/AppTheme.NoActionBar.Fullscreen"/>
+            android:theme="@style/AppTheme.Fullscreen"/>
 
         <activity
             android:name=".screens.images.ImagesPagerActivity"
-            android:theme="@style/AppTheme.NoActionBar.Fullscreen"/>
+            android:theme="@style/AppTheme.Fullscreen"/>
 
         <service
             android:name=".service.FCMService"

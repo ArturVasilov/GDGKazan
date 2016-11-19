@@ -24,6 +24,7 @@ import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
 import ru.gdg.kazan.gdgkazan.models.Photo;
 import ru.gdg.kazan.gdgkazan.screens.images.ImagesPagerActivity;
+import ru.gdg.kazan.gdgkazan.utils.ThemeUtils;
 
 /**
  * @author Artur Vasilov
@@ -65,6 +66,7 @@ public class EventActivity extends AppCompatActivity implements EventView,
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(ThemeUtils.obtainThemeFromConfig());
         setContentView(R.layout.ac_event);
         if (savedInstanceState == null) {
             Analytics.logEventScreenStarted();

@@ -1,6 +1,9 @@
 package ru.gdg.kazan.gdgkazan.screens.events;
 
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
@@ -20,6 +23,7 @@ import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.EventSubscription;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
 import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
+import ru.gdg.kazan.gdgkazan.utils.ThemeUtils;
 
 /**
  * @author Artur Vasilov
@@ -36,10 +40,13 @@ public class EventsHolder extends RecyclerView.ViewHolder {
     TextView mDescriptionText;
 
     @BindView(R.id.moreText)
-    View mMoreText;
+    TextView mMoreText;
 
     @BindView(R.id.notificationsBar)
     View mNotificationsBar;
+
+    @BindView(R.id.notificationsTitle)
+    TextView mNotificationsTitle;
 
     @BindView(R.id.notificationsSwitcher)
     SwitchCompat mNotificationsSwitcher;
@@ -53,6 +60,11 @@ public class EventsHolder extends RecyclerView.ViewHolder {
         super(itemView);
         mListener = listener;
         ButterKnife.bind(this, itemView);
+
+        @ColorRes int accentColor = ThemeUtils.obtainAccentColorFromConfig();
+        @ColorInt int textColor = ContextCompat.getColor(mMoreText.getContext(), accentColor);
+        mMoreText.setTextColor(textColor);
+        mNotificationsTitle.setTextColor(textColor);
     }
 
     @NonNull
@@ -80,12 +92,14 @@ public class EventsHolder extends RecyclerView.ViewHolder {
             mListener.onImageClick(mEvent);
         });
 
+        mMoreText.setTextColor(ContextCompat.getColor(mMoreText.getContext(), ThemeUtils.obtainAccentColorFromConfig()));
         mMoreText.setOnClickListener(view -> {
             Analytics.logEventMoreButtonClick(mEvent);
             mListener.onEventClick(mEvent);
         });
 
         mNotificationsBar.setOnClickListener(view -> {
+            // to disable root clicking effect
         });
 
         bindNotificationsSwitcher();
