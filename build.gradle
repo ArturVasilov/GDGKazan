@@ -22,9 +22,39 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+def params = []
+try {
+    File paramsFile = new File("D:\\Android\\projects\\GDGKazan\\build_params.txt")
+    paramsFile.eachLine {
+        params.add(it)
+    }
+} catch (IOException ignored) {
+    params.add("")
+}
+
+def buildKeys = []
+try {
+    File buildFile = new File("D:\\Android\\projects\\GDGKazan\\build_release.txt")
+    buildFile.eachLine {
+        buildKeys.add(it)
+    }
+} catch (IOException ignored) {
+    1.upto(4, {
+        buildKeys.add("stub")
+    })
+}
+
 ext {
     projectName = 'GDGKazan'
-    versionName = '1.0'
+    versionName = '1.0.0'
     versionCode = 1
+
+    flurryApiKey = params[0]
+
+    keyAlias = buildKeys[0]
+    keyPassword = buildKeys[1]
+    storeFile = buildKeys[2]
+    storePassword = buildKeys[3]
 }
+
 

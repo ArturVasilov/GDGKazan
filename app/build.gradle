@@ -13,6 +13,8 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
 
+        buildConfigField "String", "FLURRY_API_KEY", rootProject.ext.flurryApiKey
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -32,6 +34,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+        }
+        release {
+            keyAlias rootProject.ext.keyAlias
+            keyPassword rootProject.ext.keyPassword
+            storeFile file(rootProject.ext.storeFile)
+            storePassword rootProject.ext.storePassword
         }
     }
 
@@ -79,7 +92,7 @@ dependencies {
 
     compile 'ru.arturvasilov:sqlite:0.1.8'
 
-    prodCompile 'com.flurry.android:analytics:6.2.0'
+    prodCompile 'com.flurry.android:analytics:6.7.0'
 
     testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {

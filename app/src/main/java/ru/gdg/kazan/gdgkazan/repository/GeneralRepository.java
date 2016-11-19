@@ -7,7 +7,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import ru.gdg.kazan.gdgkazan.BuildConfig;
 import ru.gdg.kazan.gdgkazan.utils.Observables;
 import rx.Observable;
-import rx.functions.Func1;
 
 /**
  * @author Artur Vasilov

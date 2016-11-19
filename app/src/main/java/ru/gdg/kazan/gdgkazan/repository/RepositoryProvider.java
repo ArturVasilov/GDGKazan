@@ -1,7 +1,6 @@
 package ru.gdg.kazan.gdgkazan.repository;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
 import ru.gdg.kazan.gdgkazan.repository.preferences.FirebaseConfigStorage;
 import ru.gdg.kazan.gdgkazan.repository.preferences.KeyValueStorage;

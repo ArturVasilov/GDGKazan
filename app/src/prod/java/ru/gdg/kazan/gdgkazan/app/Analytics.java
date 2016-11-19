@@ -23,7 +23,7 @@ public final class Analytics {
     public static void init(@NonNull Context context) {
         sFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
 
-        FlurryAgent.init(context, "tH2W6T44X24JXGKTCW2SB");
+        FlurryAgent.init(context, BuildConfig.FLURRY_API_KEY);
         FlurryAgent.setVersionName(BuildConfig.VERSION_NAME);
         FlurryAgent.setLogEnabled(BuildConfig.DEBUG);
         FlurryAgent.setLogEvents(BuildConfig.DEBUG);
