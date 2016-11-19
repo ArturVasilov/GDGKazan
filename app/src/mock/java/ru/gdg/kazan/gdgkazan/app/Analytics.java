@@ -129,6 +129,10 @@ public final class Analytics {
         // Do nothing
     }
 
+    public static void logSpecialNotificationReceived(@NonNull String specialAction) {
+        // Do nothing
+    }
+
     //endregion NOTIFICATIONS
 
 }

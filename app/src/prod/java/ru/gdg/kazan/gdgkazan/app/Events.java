@@ -49,6 +49,7 @@ public interface Events {
     String NOTIFICATION_IGNORE = "notification_ignored";
     String NOTIFICATION_CLICK = "notification_click";
     String NOTIFICATION_DISMISS = "notification_dismiss";
+    String NOTIFICATION_SPECIAL_ACTION = "notification_special_action";
 
     //endregion NOTIFICATIONS
 

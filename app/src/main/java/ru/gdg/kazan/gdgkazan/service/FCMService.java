@@ -12,6 +12,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import java.util.Map;
 
 import ru.arturvasilov.rxloader.RxUtils;
+import ru.arturvasilov.rxloader.stubs.EmptyObserver;
 import ru.arturvasilov.sqlite.core.Where;
 import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.R;
@@ -142,19 +143,18 @@ public class FCMService extends FirebaseMessagingService {
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setDeleteIntent(deleteIntent)
-                .setSmallIcon(R.mipmap.ic_launcher);
+                .setSmallIcon(R.drawable.ic_gdg);
 
         mNotificationManager.notify(notificationId, builder.build());
     }
 
     private void proceedSpecialAction(@NonNull String action) {
+        Analytics.logSpecialNotificationReceived(action);
+
         if (!TextUtils.equals(SPECIAL_ACTION_UPDATE_DATA, action)) {
             return;
         }
 
-        //TODO : update events
-
-        final EventsRepository eventsRepository = RepositoryProvider.provideEventsRepository();
         final KeyValueStorage keyValueStorage = RepositoryProvider.provideKeyValueStorage();
         final String beforeUrl = keyValueStorage.getString(KeyValueStorage.EVENTS_URL);
 
@@ -164,6 +164,7 @@ public class FCMService extends FirebaseMessagingService {
                 .flatMap(o -> {
                     Analytics.logConfigSuccess();
 
+                    EventsRepository eventsRepository = RepositoryProvider.provideEventsRepository();
                     String newUrl = keyValueStorage.getString(KeyValueStorage.EVENTS_URL);
                     if (TextUtils.equals(newUrl, beforeUrl) && eventsRepository.hasLocalEvents()) {
                         return Observable.just(o);
@@ -171,11 +172,7 @@ public class FCMService extends FirebaseMessagingService {
                     Analytics.logLoadingEvents();
                     return eventsRepository.fetchEvents();
                 })
-                .subscribe(
-                        o -> {
-                        },
-                        throwable -> {
-                        });
+                .subscribe(new EmptyObserver<>());
 
     }
 

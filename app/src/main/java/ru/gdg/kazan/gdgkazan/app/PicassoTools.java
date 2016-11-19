@@ -15,6 +15,7 @@ import java.lang.ref.WeakReference;
 
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
+import ru.arturvasilov.rxloader.stubs.StubAction0;
 import ru.gdg.kazan.gdgkazan.R;
 import rx.functions.Action0;
 
@@ -70,7 +71,7 @@ public final class PicassoTools {
         private final Action0 mOnError;
 
         public PicassoCallback(@NonNull Action0 onError) {
-            this(() -> {}, onError);
+            this(new StubAction0(), onError);
         }
 
         public PicassoCallback(@NonNull Action0 onSuccess, @NonNull Action0 onError) {

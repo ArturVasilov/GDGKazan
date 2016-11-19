@@ -180,6 +180,12 @@ public final class Analytics {
                 .log(Events.NOTIFICATION_DISMISS);
     }
 
+    public static void logSpecialNotificationReceived(@NonNull String specialAction) {
+        EventTracker.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(specialAction))
+                .log(Events.NOTIFICATION_SPECIAL_ACTION);
+    }
+
     //endregion NOTIFICATIONS
 
 }

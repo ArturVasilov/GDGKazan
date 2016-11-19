@@ -19,6 +19,7 @@ public interface ParametersKeys {
     String NOTIFICATION_ID = "notification_id";
     String LINK = "link";
     String INDEX = "index";
+    String ACTION = "action";
 
     //endregion GENERAL
 

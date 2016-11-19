@@ -13,7 +13,6 @@ import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.app.CacheDir;
 import ru.gdg.kazan.gdgkazan.app.Lifecycler;
 import ru.gdg.kazan.gdgkazan.app.PicassoTools;
-import ru.gdg.kazan.gdgkazan.screens.splash.SplashActivity;
 
 /**
  * @author Artur Vasilov
