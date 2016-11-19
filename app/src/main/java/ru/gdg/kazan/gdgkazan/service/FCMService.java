@@ -17,7 +17,12 @@ import ru.arturvasilov.sqlite.rx.RxSQLite;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.models.database.EventSubscriptionsTable;
+import ru.gdg.kazan.gdgkazan.repository.EventsRepository;
+import ru.gdg.kazan.gdgkazan.repository.RepositoryProvider;
+import ru.gdg.kazan.gdgkazan.repository.preferences.KeyValueStorage;
 import ru.gdg.kazan.gdgkazan.screens.splash.SplashActivity;
+import ru.gdg.kazan.gdgkazan.utils.TextUtils;
+import rx.Observable;
 
 /**
  * @author Artur Vasilov
@@ -34,6 +39,10 @@ public class FCMService extends FirebaseMessagingService {
     private static final String BODY = "body";
     private static final String OPEN_EVENT_PAGE = "open_event_page";
 
+    private static final String SPECIAL_ACTION = "special_action";
+
+    private static final String SPECIAL_ACTION_UPDATE_DATA = "update_data";
+
     private NotificationManagerCompat mNotificationManager;
 
     @Override
@@ -49,6 +58,12 @@ public class FCMService extends FirebaseMessagingService {
         }
 
         Map<String, String> pushParams = remoteMessage.getData();
+
+        if (pushParams.containsKey(SPECIAL_ACTION)) {
+            proceedSpecialAction(pushParams.get(SPECIAL_ACTION));
+            return;
+        }
+
         String title = pushParams.get(TITLE);
         String body = pushParams.get(BODY);
         int notificationId;
@@ -130,6 +145,38 @@ public class FCMService extends FirebaseMessagingService {
                 .setSmallIcon(R.mipmap.ic_launcher);
 
         mNotificationManager.notify(notificationId, builder.build());
+    }
+
+    private void proceedSpecialAction(@NonNull String action) {
+        if (!TextUtils.equals(SPECIAL_ACTION_UPDATE_DATA, action)) {
+            return;
+        }
+
+        //TODO : update events
+
+        final EventsRepository eventsRepository = RepositoryProvider.provideEventsRepository();
+        final KeyValueStorage keyValueStorage = RepositoryProvider.provideKeyValueStorage();
+        final String beforeUrl = keyValueStorage.getString(KeyValueStorage.EVENTS_URL);
+
+        RepositoryProvider.provideGeneralRepository()
+                .config()
+                .take(1)
+                .flatMap(o -> {
+                    Analytics.logConfigSuccess();
+
+                    String newUrl = keyValueStorage.getString(KeyValueStorage.EVENTS_URL);
+                    if (TextUtils.equals(newUrl, beforeUrl) && eventsRepository.hasLocalEvents()) {
+                        return Observable.just(o);
+                    }
+                    Analytics.logLoadingEvents();
+                    return eventsRepository.fetchEvents();
+                })
+                .subscribe(
+                        o -> {
+                        },
+                        throwable -> {
+                        });
+
     }
 
 }

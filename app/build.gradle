@@ -79,6 +79,8 @@ dependencies {
 
     compile 'ru.arturvasilov:sqlite:0.1.7'
 
+    prodCompile 'com.flurry.android:analytics:6.2.0'
+
     testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

@@ -81,11 +81,11 @@ public final class Analytics {
         // Do nothing
     }
 
-    public static void logEventLinkClicked(@NonNull Event event, @NonNull Link link) {
+    public static void logEventLinkClick(@NonNull Event event, @NonNull Link link) {
         // Do nothing
     }
 
-    public static void logEventPhotoClicked(@NonNull Event event, int index) {
+    public static void logEventPhotoClick(@NonNull Event event, int index) {
         // Do nothing
     }
 
@@ -109,6 +109,10 @@ public final class Analytics {
         // Do nothing
     }
 
+    public static void logNotificationReceived( int notificationId) {
+        // Do nothing
+    }
+
     public static void logShowNotification(int eventId, int notificationId) {
         // Do nothing
     }
@@ -117,11 +121,11 @@ public final class Analytics {
         // Do nothing
     }
 
-    public static void logNotificationClicked(int eventId, int notificationId) {
+    public static void logNotificationClick(int eventId, int notificationId) {
         // Do nothing
     }
 
-    public static void logNotificationDismissed(int eventId, int notificationId) {
+    public static void logNotificationDismiss(int eventId, int notificationId) {
         // Do nothing
     }
 
