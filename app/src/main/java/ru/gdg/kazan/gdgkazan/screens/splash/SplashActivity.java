@@ -49,7 +49,7 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
                 int eventId = getIntent().getIntExtra(FCMService.EVENT_ID_PUSH_KEY, 0);
                 int notificationId = getIntent().getIntExtra(FCMService.NOTIFICATION_ID_KEY, 0);
                 if (eventId >= 0 && notificationId >= 0) {
-                    Analytics.logNotificationClicked(eventId, notificationId);
+                    Analytics.logNotificationClick(eventId, notificationId);
                 }
             }
         }

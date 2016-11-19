@@ -1,9 +1,5 @@
 package ru.gdg.kazan.gdgkazan.app;
 
-/**
- * @author Artur Vasilov
- */
-
 import android.content.Context;
 import android.support.annotation.NonNull;
 
@@ -30,28 +26,32 @@ public final class Analytics {
     //region SPLASH
 
     public static void logSplashScreenStarted() {
-
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.SPLASH_SCREEN_STARTED);
     }
 
     public static void logConfigSuccess() {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.SPLASH_CONFIG_LOAD_SUCCESS);
     }
 
     public static void logSplashFailed(boolean isConfigSuccess, @NonNull Throwable throwable) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.SPLASH_FAILED_CONFIG_SUCCESS, String.valueOf(isConfigSuccess))
+                .putString(ParametersKeys.SPLASH_FAILED_MESSAGE, throwable.getMessage())
+                .log(Events.SPLASH_FAILED);
     }
 
     public static void logLocalSplashAuth() {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.SPLASH_LOCAL_AUTH);
     }
 
     public static void logLoadingEvents() {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.SPLASH_LOADING_EVENTS);
     }
 
     public static void logRestartSplash(boolean isConfigSuccess) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.SPLASH_RESTART_CONFIG_SUCCESS, String.valueOf(isConfigSuccess))
+                .log(Events.SPLASH_RESTART_LOADING);
     }
 
     //endregion SPLASH
@@ -59,27 +59,37 @@ public final class Analytics {
     //region EVENTS
 
     public static void logEventsScreenStarted() {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.EVENTS_SCREEN_STARTED);
     }
 
     public static void logEventLogoClick(@NonNull Event event) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .log(Events.EVENTS_EVENT_LOGO_CLICK);
     }
 
     public static void logEventCardClick(@NonNull Event event) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .log(Events.EVENTS_EVENT_CARD_CLICK);
     }
 
     public static void logEventMoreButtonClick(@NonNull Event event) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .log(Events.EVENTS_EVENT_MORE_BUTTON_CLICK);
     }
 
     public static void logEventNotificationsSwitcherEnabled(@NonNull Event event) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .log(Events.EVENTS_EVENT_NOTIFICATION_SWITCHER_ENABLED);
     }
 
     public static void logEventNotificationsSwitcherDisabled(@NonNull Event event) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .log(Events.EVENTS_EVENT_NOTIFICATION_SWITCHER_DISABLED);
     }
 
     //endregion EVENTS
@@ -87,15 +97,21 @@ public final class Analytics {
     //region EVENTS
 
     public static void logEventScreenStarted() {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.EVENT_SCREEN_STARTED);
     }
 
-    public static void logEventLinkClicked(@NonNull Event event, @NonNull Link link) {
-        // Do nothing
+    public static void logEventLinkClick(@NonNull Event event, @NonNull Link link) {
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .putString(ParametersKeys.LINK, link.getTitle())
+                .log(Events.EVENT_LINK_CLICK);
     }
 
-    public static void logEventPhotoClicked(@NonNull Event event, int index) {
-        // Do nothing
+    public static void logEventPhotoClick(@NonNull Event event, int index) {
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(event.getId()))
+                .putString(ParametersKeys.INDEX, String.valueOf(index))
+                .log(Events.EVENT_PHOTO_CLICK);
     }
 
     //endregion EVENT
@@ -103,7 +119,10 @@ public final class Analytics {
     //region PHOTOS
 
     public static void logPhotoScrolled(int current, int all) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.PHOTO_CURRENT_INDEX, String.valueOf(current))
+                .putString(ParametersKeys.PHOTO_ALL_COUNT, String.valueOf(all))
+                .log(Events.PHOTOS_PHOTO_SCROLLED);
     }
 
     //endregion PHOTOS
@@ -111,27 +130,48 @@ public final class Analytics {
     //region NOTIFICATIONS
 
     public static void logTokenRefreshed() {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics).log(Events.NOTIFICATIONS_TOKEN_REFRESHED);
     }
 
     public static void logNotificationReceived(int eventId, int notificationId) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(eventId))
+                .putString(ParametersKeys.NOTIFICATION_ID, String.valueOf(notificationId))
+                .log(Events.NOTIFICATION_RECEIVE);
+    }
+
+    public static void logNotificationReceived(int notificationId) {
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.NOTIFICATION_ID, String.valueOf(notificationId))
+                .log(Events.NOTIFICATION_RECEIVE);
     }
 
     public static void logShowNotification(int eventId, int notificationId) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(eventId))
+                .putString(ParametersKeys.NOTIFICATION_ID, String.valueOf(notificationId))
+                .log(Events.NOTIFICATION_SHOW);
     }
 
     public static void logIgnoreNotification(int eventId, int notificationId) {
-        // Do nothing
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(eventId))
+                .putString(ParametersKeys.NOTIFICATION_ID, String.valueOf(notificationId))
+                .log(Events.NOTIFICATION_IGNORE);
     }
 
-    public static void logNotificationClicked(int eventId, int notificationId) {
-        // Do nothing
+    public static void logNotificationClick(int eventId, int notificationId) {
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(eventId))
+                .putString(ParametersKeys.NOTIFICATION_ID, String.valueOf(notificationId))
+                .log(Events.NOTIFICATION_CLICK);
     }
 
-    public static void logNotificationDismissed(int eventId, int notificationId) {
-        // Do nothing
+    public static void logNotificationDismiss(int eventId, int notificationId) {
+        FirebaseEventBuilder.newEvent(sFirebaseAnalytics)
+                .putString(ParametersKeys.EVENT_ID, String.valueOf(eventId))
+                .putString(ParametersKeys.NOTIFICATION_ID, String.valueOf(notificationId))
+                .log(Events.NOTIFICATION_DISMISS);
     }
 
     //endregion NOTIFICATIONS

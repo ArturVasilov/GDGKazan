@@ -20,7 +20,7 @@ public class PushCancelReceiver extends BroadcastReceiver {
             int notificationId = intent.getIntExtra(FCMService.NOTIFICATION_ID_KEY, -1);
             int eventId = intent.getIntExtra(FCMService.EVENT_ID_KEY, -1);
             if (notificationId >= 0 && eventId >= 0) {
-                Analytics.logNotificationDismissed(notificationId, eventId);
+                Analytics.logNotificationDismiss(notificationId, eventId);
             }
         }
     }

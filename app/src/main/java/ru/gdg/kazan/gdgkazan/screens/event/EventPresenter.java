@@ -38,12 +38,12 @@ public class EventPresenter {
     }
 
     public void onPhotoClick(int selectedPosition) {
-        Analytics.logEventPhotoClicked(mEvent, selectedPosition);
+        Analytics.logEventPhotoClick(mEvent, selectedPosition);
         mView.showPhotosPager(mEvent.getPhotos(), selectedPosition);
     }
 
     public void onLinkClick(@NonNull Link link) {
-        Analytics.logEventLinkClicked(mEvent, link);
+        Analytics.logEventLinkClick(mEvent, link);
         mView.openLink(link.getUrl());
     }
 }

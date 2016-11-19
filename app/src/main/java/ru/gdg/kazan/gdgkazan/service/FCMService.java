@@ -67,6 +67,8 @@ public class FCMService extends FirebaseMessagingService {
 
         if (eventId >= 0 && notificationId >= 0) {
             Analytics.logNotificationReceived(eventId, notificationId);
+        } else if (notificationId >= 0) {
+            Analytics.logNotificationReceived(notificationId);
         }
 
         if (eventId < 0) {
