@@ -10,8 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.google.android.gms.appinvite.AppInviteInvitation;
-
 import java.util.List;
 
 import butterknife.BindView;
@@ -31,8 +29,6 @@ import ru.gdg.kazan.gdgkazan.utils.ThemeUtils;
  * @author Artur Vasilov
  */
 public class EventsActivity extends AppCompatActivity implements EventsView, EventsHolder.EventsActionListener {
-
-    private static final int REQUEST_INVITE = 101;
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
@@ -74,18 +70,6 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
             eventId = getIntent().getIntExtra(FCMService.EVENT_ID_PUSH_KEY, -1);
         }
         presenter.init(eventId);
-
-        sendInvite();
-    }
-
-    private void sendInvite() {
-        /*Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
-                .setMessage(getString(R.string.invitation_message))
-                .setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
-                .setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
-                .setCallToActionText(getString(R.string.invitation_cta))
-                .build();
-        startActivityForResult(intent, REQUEST_INVITE);*/
     }
 
     private void setupRecyclerView() {

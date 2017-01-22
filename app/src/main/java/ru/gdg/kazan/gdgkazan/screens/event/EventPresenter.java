@@ -2,6 +2,7 @@ package ru.gdg.kazan.gdgkazan.screens.event;
 
 import android.support.annotation.NonNull;
 
+import ru.gdg.kazan.gdgkazan.BuildConfig;
 import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.models.Event;
 import ru.gdg.kazan.gdgkazan.models.Link;
@@ -35,6 +36,14 @@ public class EventPresenter {
         } else {
             mView.showPhotos(mEvent.getPhotos());
         }
+    }
+
+    public void onShareClick() {
+        mView.sendInvite(
+                mEvent.getName(),
+                mEvent.getPreviewImage(),
+                BuildConfig.INVITE_ENDPOINT + mEvent.getId()
+        );
     }
 
     public void onPhotoClick(int selectedPosition) {

@@ -13,9 +13,10 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
 
-        buildConfigField "String", "FLURRY_API_KEY", rootProject.ext.flurryApiKey
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "FLURRY_API_KEY", rootProject.ext.flurryApiKey
+        buildConfigField "String", "INVITE_ENDPOINT", '"http://gdgkazan.ru/events/"'
     }
 
     compileOptions {
@@ -39,6 +40,10 @@ android {
 
     signingConfigs {
         debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
         }
         release {
             keyAlias rootProject.ext.keyAlias

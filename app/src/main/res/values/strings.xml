@@ -21,6 +21,13 @@
     <!-- IMAGES -->
     <string name="images.title">%1$d из %2$d</string>
 
+    <!-- APP INVITES -->
+    <string name="invitation_title">GDG Kazan</string>
+    <string name="invitation_message_format">%s от GDG Kazan</string>
+
+    <!-- MENUS -->
+    <string name="menu.event.share">Share event</string>
+
     <!-- CONTENT DESCRIPTIONS -->
     <string name="cd.refresh">Обновить</string>
 

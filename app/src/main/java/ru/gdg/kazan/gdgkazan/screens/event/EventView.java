@@ -26,6 +26,8 @@ public interface EventView {
 
     void showPhotosPager(@NonNull List<Photo> photos, int selectedPosition);
 
+    void sendInvite(@NonNull String eventName, @NonNull String imageLink, @NonNull String deepLink);
+
     void openLink(@NonNull String url);
 
 }
