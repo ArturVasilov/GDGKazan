@@ -463,5 +463,25 @@
         "url": "https://www.tensorflow.org/"
       }
     ]
+  },
+  {
+    "id": 8,
+    "name": "Firebase Meetup",
+    "preview_img": "https://drive.google.com/uc?export=download&id=0B0Z-lYDZWlawSEtCSWlKWDdaSVU",
+    "preview_description": "Продвинутый митап по Firebase, на котором лидеры GDG Kazan расскажут Firebase, концепцию Internet of Things и новую платформу Android Things и добавят ко всему этому много практики!\n\nМитап пройдет 28 января в 13:30 по адресу Кремлевская 35 в аудитории 1310.",
+    "description": "Продвинутый митап по Firebase, на котором лидеры GDG Kazan расскажут про неочевидные возможности Firebase, концепцию Internet of Things и новую платформу Android Things, а также на практике покажут, каким образом можно сделать своего робота и систему охраны дома с использованием Firebase, Android Things, Bluetooth и Arduino!\n\nМитап пройдет 28 января в 13:30 по адресу Кремлевская 35 в аудитории 1310.",
+    "subscription_possible": true,
+    "is_pinned": false,
+    "photos": [],
+    "links": [
+      {
+        "title": "Документация по платформе Firebase",
+        "url": "https://firebase.google.com/docs/"
+      },
+      {
+        "title": "Презентация Firebase на Google I/O 2016",
+        "url": "https://www.youtube.com/watch?v=tb2GZ3Bh4p8"
+      }
+    ]
   }
 ]

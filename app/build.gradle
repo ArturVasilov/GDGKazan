@@ -74,6 +74,7 @@ dependencies {
     compile "com.google.firebase:firebase-messaging:$firebaseVersion"
     compile "com.google.firebase:firebase-crash:$firebaseVersion"
     compile "com.google.firebase:firebase-auth:$firebaseVersion"
+    compile "com.google.firebase:firebase-invites:$firebaseVersion"
 
     compile 'io.reactivex:rxjava:1.2.2'
     compile 'io.reactivex:rxandroid:1.2.1'
