@@ -1,5 +1,5 @@
 ext {
-    supportVersion = '25.0.1'
-    firebaseVersion = '9.8.0'
+    supportVersion = '25.1.0'
+    firebaseVersion = '10.0.1'
     butterKnifeVersion = '8.4.0'
 }
