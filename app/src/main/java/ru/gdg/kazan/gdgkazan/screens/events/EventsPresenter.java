@@ -37,4 +37,8 @@ public class EventsPresenter {
                 }, throwable -> {
                 });
     }
+
+    public void onAppInviteEvent(int eventId) {
+        init(eventId);
+    }
 }

@@ -10,12 +10,18 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
+import com.google.android.gms.appinvite.AppInvite;
+import com.google.android.gms.appinvite.AppInviteReferral;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.arturvasilov.rxloader.LifecycleHandler;
 import ru.arturvasilov.rxloader.LoaderLifecycleHandler;
+import ru.gdg.kazan.gdgkazan.BuildConfig;
 import ru.gdg.kazan.gdgkazan.R;
 import ru.gdg.kazan.gdgkazan.app.Analytics;
 import ru.gdg.kazan.gdgkazan.models.Event;
@@ -28,7 +34,8 @@ import ru.gdg.kazan.gdgkazan.utils.ThemeUtils;
 /**
  * @author Artur Vasilov
  */
-public class EventsActivity extends AppCompatActivity implements EventsView, EventsHolder.EventsActionListener {
+public class EventsActivity extends AppCompatActivity implements EventsView,
+        EventsHolder.EventsActionListener, GoogleApiClient.OnConnectionFailedListener {
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
@@ -37,6 +44,10 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     RecyclerView mRecyclerView;
 
     private EventsAdapter mEventsAdapter;
+
+    private EventsPresenter mPresenter;
+
+    private GoogleApiClient mGoogleApiClient;
 
     public static void start(@NonNull Activity activity) {
         activity.startActivity(new Intent(activity, EventsActivity.class));
@@ -60,22 +71,48 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
 
         setSupportActionBar(mToolbar);
 
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(AppInvite.API)
+                .enableAutoManage(this, this)
+                .build();
+
         LifecycleHandler lifecycleHandler = LoaderLifecycleHandler.create(this, getSupportLoaderManager());
 
         setupRecyclerView();
 
-        EventsPresenter presenter = new EventsPresenter(this, lifecycleHandler);
+        mPresenter = new EventsPresenter(this, lifecycleHandler);
         int eventId = -1;
         if (getIntent() != null && getIntent().hasExtra(FCMService.EVENT_ID_PUSH_KEY)) {
             eventId = getIntent().getIntExtra(FCMService.EVENT_ID_PUSH_KEY, -1);
         }
-        presenter.init(eventId);
+        mPresenter.init(eventId);
+
+        if (eventId < 0) {
+            handleAppInvite();
+        }
     }
 
     private void setupRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mEventsAdapter = new EventsAdapter(this);
         mRecyclerView.setAdapter(mEventsAdapter);
+    }
+
+    private void handleAppInvite() {
+        AppInvite.AppInviteApi.getInvitation(mGoogleApiClient, this, false)
+                .setResultCallback(
+                        result -> {
+                            if (result.getStatus().isSuccess()) {
+                                Intent intent = result.getInvitationIntent();
+                                String deepLink = AppInviteReferral.getDeepLink(intent);
+                                try {
+                                    int eventId = Integer.parseInt(deepLink.substring(BuildConfig.INVITE_ENDPOINT.length()));
+                                    mPresenter.onAppInviteEvent(eventId);
+                                } catch (Exception ignored) {
+                                }
+                            }
+                        });
+
     }
 
     @Override
@@ -96,5 +133,10 @@ public class EventsActivity extends AppCompatActivity implements EventsView, Eve
     @Override
     public void onImageClick(@NonNull Event event) {
         ImageActivity.start(this, new Photo("", event.getPreviewImage()));
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        //ignore error
     }
 }
