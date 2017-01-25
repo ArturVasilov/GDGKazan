@@ -112,7 +112,6 @@ public class EventsActivity extends AppCompatActivity implements EventsView,
                                 }
                             }
                         });
-
     }
 
     @Override

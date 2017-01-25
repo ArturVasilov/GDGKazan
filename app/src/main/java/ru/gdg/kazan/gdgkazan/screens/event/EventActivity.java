@@ -148,6 +148,8 @@ public class EventActivity extends AppCompatActivity implements EventView,
         ImagesPagerActivity.start(this, photos, selectedPosition);
     }
 
+    private static final int APP_INVITE_REQUEST_CODE = 18;
+
     @Override
     public void sendInvite(@NonNull String eventName, @NonNull String imageLink, @NonNull String deepLink) {
         Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
@@ -155,7 +157,7 @@ public class EventActivity extends AppCompatActivity implements EventView,
                 .setDeepLink(Uri.parse(deepLink))
                 .setCustomImage(Uri.parse(imageLink))
                 .build();
-        startActivityForResult(intent, 0);
+        startActivityForResult(intent, APP_INVITE_REQUEST_CODE);
     }
 
     @Override
